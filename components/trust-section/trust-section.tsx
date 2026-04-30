@@ -1,57 +1,55 @@
-import {
-  Flower,
-  Heart,
-  Truck,
-  Leaf,
-  MapPin,
-  Clock,
-} from 'lucide-react'
+import { Flower, Heart, Truck, Leaf, MapPin, Clock } from "lucide-react";
 
 const items = [
   {
     icon: Flower,
-    title: 'Arreglos artesanales',
-    description: 'Cada ramo es armado a mano por nuestros floristas con dedicación.',
+    title: "Arreglos artesanales",
+    description:
+      "Cada ramo es armado a mano por nuestros floristas con dedicación.",
   },
   {
     icon: Heart,
-    title: 'Atención personalizada',
-    description: 'Te asesoramos para encontrar el regalo ideal según la ocasión.',
+    title: "Atención personalizada",
+    description:
+      "Te asesoramos para encontrar el regalo ideal según la ocasión.",
   },
   {
     icon: Truck,
-    title: 'Entregas coordinadas',
-    description: 'Programamos cada envío para que llegue en el momento justo.',
+    title: "Entregas coordinadas",
+    description: "Programamos cada envío para que llegue en el momento justo.",
   },
   {
     icon: Leaf,
-    title: 'Flores de temporada',
-    description: 'Seleccionamos lo mejor de cada estación para asegurar frescura.',
+    title: "Flores de temporada",
+    description:
+      "Seleccionamos lo mejor de cada estación para asegurar frescura.",
   },
   {
     icon: MapPin,
-    title: 'Envíos sin cargo',
-    description: 'Llegamos a toda la zona centro sin costo adicional.',
+    title: "Envíos sin cargo",
+    description: "Llegamos a toda la zona centro sin costo adicional.",
   },
   {
     icon: Clock,
-    title: 'Atendemos 24 hs',
-    description: 'Estamos disponibles todos los días, a cualquier hora.',
+    title: "Atendemos 24 hs",
+    description: "Estamos disponibles todos los días, a cualquier hora.",
   },
-]
+];
 
 export function TrustSection() {
   return (
-    <section className="bg-secondary/40 py-16 md:py-24">
+    <section className="bg-secondary/40 py-16 md:py-16">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs uppercase tracking-[0.2em] text-primary">Por qué elegirnos</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-primary">
+            Por qué elegirnos
+          </p>
           <h2 className="mt-3 text-balance font-serif text-3xl leading-tight md:text-4xl">
             Más de 20 años cuidando cada detalle
           </h2>
           <p className="mt-4 text-pretty text-muted-foreground">
-            Combinamos oficio artesanal, asesoramiento cálido y flores seleccionadas para
-            que cada entrega sea memorable.
+            Combinamos oficio artesanal, asesoramiento cálido y flores
+            seleccionadas para que cada entrega sea memorable.
           </p>
         </div>
 
@@ -73,5 +71,5 @@ export function TrustSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
