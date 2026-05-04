@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Inter } from 'next/font/google'
+import { Playfair_Display, Plus_Jakarta_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeScript } from '@/components/theme-switcher/theme-script'
 import './globals.css'
@@ -10,9 +10,9 @@ const playfair = Playfair_Display({
   display: 'swap',
 })
 
-const inter = Inter({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-plus-jakarta-sans',
   display: 'swap',
 })
 
@@ -45,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={`bg-background ${playfair.variable} ${inter.variable}`}>
+    <html lang="es" className={`bg-background ${plusJakartaSans.variable}`}>
       <head>
         <ThemeScript />
       </head>

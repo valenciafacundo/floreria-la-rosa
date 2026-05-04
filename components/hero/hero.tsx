@@ -6,7 +6,7 @@ import { generalWhatsAppUrl } from "@/helpers/whatsapp";
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 pb-12 pt-10 md:px-8 md:pb-16 md:pt-14 lg:grid-cols-2 lg:items-center lg:gap-16 lg:pb-24 lg:pt-20">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 pb-12 pt-10 md:px-8 md:pb-16 md:pt-14 lg:grid-cols-2 lg:items-center lg:gap-16 lg:pb-8 lg:pt-8">
         <div className="flex flex-col gap-6">
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs uppercase tracking-[0.18em] text-muted-foreground">
             <Sparkles className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
