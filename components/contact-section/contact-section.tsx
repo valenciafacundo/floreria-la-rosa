@@ -3,12 +3,11 @@ import { generalWhatsAppUrl, PHONE_HREF, PHONE_NUMBER } from '@/helpers/whatsapp
 
 export function ContactSection() {
   return (
-    <section id="contacto" className="bg-background py-16 md:py-24">
+    <section id="contacto" className="bg-background py-10 md:py-14">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
-        <div className="grid gap-10 rounded-[2rem] border border-border bg-card p-8 md:grid-cols-2 md:gap-12 md:p-12 lg:p-16">
+        <div className="grid gap-10 rounded-[2rem] border border-border bg-card p-8 md:grid-cols-2 md:gap-10 md:p-10 lg:p-12">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-primary">Contacto</p>
-            <h2 className="mt-3 text-balance font-serif text-3xl leading-tight md:text-4xl">
+            <h2 className="text-balance font-serif text-3xl leading-tight md:text-4xl">
               Hablemos sobre tu próximo ramo
             </h2>
             <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
@@ -17,7 +16,7 @@ export function ContactSection() {
               momento, desde una celebración hasta un instante delicado.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a
                 href={generalWhatsAppUrl}
                 target="_blank"

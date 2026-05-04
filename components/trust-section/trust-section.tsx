@@ -53,7 +53,7 @@ export function TrustSection() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map(({ icon: Icon, title, description }) => (
             <div
               key={title}
@@ -73,3 +73,4 @@ export function TrustSection() {
     </section>
   );
 }
+

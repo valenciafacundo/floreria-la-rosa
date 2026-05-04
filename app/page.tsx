@@ -26,6 +26,7 @@ export default function HomePage() {
         {/* <HomeBannerHeader /> */}
 
         <FeaturedSection
+          background="muted"
           eyebrow="Amor y aniversarios"
           title="Flores para decir lo que sentís"
           description="Selecciones románticas y delicadas para aniversarios, gestos especiales y momentos que querés hacer inolvidables."
@@ -35,7 +36,6 @@ export default function HomePage() {
         />
 
         <FeaturedSection
-          background="muted"
           eyebrow="Cumpleaños"
           title="Opciones alegres para celebrar"
           description="Ramos y arreglos que acompañan cumpleaños con color, frescura y una presentación lista para regalar."
@@ -43,6 +43,7 @@ export default function HomePage() {
         />
 
         <FeaturedSection
+          background="muted"
           eyebrow="Nacimientos"
           title="Detalles suaves para dar la bienvenida"
           description="Arreglos delicados y cálidos para acompañar la llegada de una nueva vida con flores frescas y presentación artesanal."
@@ -50,7 +51,6 @@ export default function HomePage() {
         />
 
         <FeaturedSection
-          background="muted"
           eyebrow="Regalos especiales"
           title="Ideas versátiles para sorprender"
           description="Opciones pensadas para agradecer, felicitar o simplemente tener un gesto lindo con alguien importante."
@@ -58,6 +58,7 @@ export default function HomePage() {
         />
 
         <FeaturedSection
+          background="muted"
           eyebrow="Condolencias"
           title="Arreglos sobrios para acompañar con respeto"
           description="Coronas, cruces y corazones preparados con la sensibilidad necesaria para acompañar momentos difíciles."

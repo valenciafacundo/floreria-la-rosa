@@ -29,19 +29,19 @@ export function FeaturedSection({
       id={id}
       className={
         background === "muted"
-          ? "bg-secondary/40 py-16 md:py-24"
-          : "bg-background py-16 md:py-24"
+          ? "bg-secondary/40 py-10 md:py-14"
+          : "bg-background py-10 md:py-14"
       }
     >
       <div className="mx-auto max-w-7xl px-4 md:px-8">
-        <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+        <div className="flex flex-col items-start justify-between gap-5 md:flex-row md:items-end">
           <div className="max-w-2xl">
             <p className="text-xs uppercase tracking-[0.2em] text-primary">
               {eyebrow}
             </p>
-            <h2 className="mt-3 text-balance font-serif text-3xl leading-tight md:text-4xl">
+            {/* <h2 className="mt-3 text-balance font-serif text-3xl leading-tight md:text-4xl">
               {title}
-            </h2>
+            </h2> */}
             {description && (
               <p className="mt-3 text-pretty text-muted-foreground">
                 {description}
@@ -59,7 +59,7 @@ export function FeaturedSection({
           )}
         </div>
 
-        <div className="mt-10">
+        <div className="mt-8">
           <ProductGrid products={products} />
         </div>
       </div>

@@ -14,35 +14,36 @@ const benefits = [
   {
     icon: Truck,
     title: "Envíos sin cargo",
-    description: "En toda la ciudad",
+    description: "En zona centro",
   },
   {
     icon: Clock3,
     title: "Entrega en 24hs",
-    description: "",
+    description: "Todos los días",
   },
   {
     icon: HandHelping,
     title: "Atención personalizada",
-    description: "",
+    description: "Por WhatsApp",
   },
 ];
+
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 pb-12 pt-10 md:px-8 md:pb-16 md:pt-14 lg:grid-cols-2 lg:items-center lg:gap-16 lg:pb-8 lg:pt-8">
-        <div className="flex flex-col gap-6">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 pb-8 pt-8 md:px-8 md:pb-10 md:pt-10 lg:grid-cols-2 lg:items-center lg:gap-12 lg:pb-6 lg:pt-6">
+        <div className="flex flex-col gap-5">
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs uppercase tracking-[0.18em] text-muted-foreground">
             <Sparkles className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
             Florería artesanal · más de 20 años
           </span>
 
-          <h1 className="text-balance font-serif text-4xl leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
+          <h1 className="text-balance font-serif text-4xl leading-[1.02] tracking-tight md:text-5xl lg:text-6xl">
             Flores que son parte de
             <span className="block italic text-primary">tu historia.</span>
           </h1>
 
-          <p className="max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
+          <p className="max-w-xl text-pretty text-[15px] leading-relaxed text-muted-foreground md:text-lg">
             Arreglos artesanales hechos a mano, con flores frescas seleccionadas
             según la temporada. Te asesoramos para que cada ramo transmita
             exactamente lo que querés decir.
@@ -67,47 +68,33 @@ export function Hero() {
             </Link>
           </div>
 
-          <div className="grid gap-3 border-t border-border/60 bg-background px-4 py-4 md:grid-cols-3 md:gap-6 md:px-8 md:py-5">
+          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
             {benefits.map((benefit) => {
               const Icon = benefit.icon;
               return (
                 <div
                   key={benefit.title}
-                  className="flex items-start gap-3 rounded-2xl px-1 py-1 md:px-2"
+                  className="rounded-2xl border border-border bg-card/80 px-4 py-3 shadow-sm"
                 >
-                  <span className="mt-0.5 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <Icon className="h-5 w-5" aria-hidden="true" />
-                  </span>
-                  <div>
-                    <p className="text-sm font-semibold text-foreground md:text-base">
-                      {benefit.title}
-                    </p>
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      {benefit.description}
-                    </p>
+                  <div className="flex items-start gap-3">
+                    <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                      <Icon className="h-4.5 w-4.5" aria-hidden="true" />
+                    </span>
+                    <div className="min-w-0">
+                      <p className="text-sm font-semibold leading-tight text-foreground">
+                        {benefit.title}
+                      </p>
+                      <p className="mt-1 text-xs leading-relaxed text-muted-foreground md:text-sm">
+                        {benefit.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
               );
             })}
           </div>
-          {/* <div className="mt-2 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
-            <span className="flex items-center gap-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" /> Atendemos
-              24 hs
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" /> Envíos
-              sin cargo zona centro
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" />{" "}
-              Asesoramiento personalizado
-            </span>
-          </div> */}
 
-          {/* Banner sutil para mobile y tablet: muestra una franja horizontal con la
-              imagen del florista para aportar contexto visual sin ocupar todo el alto. */}
-          <div className="relative mt-4 aspect-[16/7] w-full overflow-hidden rounded-2xl bg-secondary shadow-md lg:hidden">
+          <div className="relative mt-2 aspect-[16/7] w-full overflow-hidden rounded-2xl bg-secondary shadow-md lg:hidden">
             <Image
               src="/hero-florist.jpg"
               alt="Florista artesanal armando un ramo de flores frescas de temporada"
@@ -124,8 +111,6 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Bloque de imagen: solo visible en pantallas grandes para que en mobile/tablet
-            no ocupe todo el ancho ni obligue a hacer scroll innecesario. */}
         <div className="relative hidden lg:block">
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] bg-secondary shadow-xl">
             <Image
