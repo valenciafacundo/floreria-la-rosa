@@ -154,7 +154,7 @@ export function HomeBannerHeader() {
                 Consultar disponibilidad
               </a>
               <Link
-                href="/catalogo"
+                href="/#catalogo"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-background px-7 py-3.5 text-sm font-medium text-foreground transition-colors hover:border-primary/40 hover:text-primary"
               >
                 Ver catálogo

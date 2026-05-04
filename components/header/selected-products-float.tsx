@@ -96,7 +96,7 @@ export function SelectedProductsFloat() {
                 {selectedProducts.map((product) => (
                   <div
                     key={product.slug}
-                    className="relative overflow-hidden rounded-3xl  border-border bg-card transition-colors duration-300 hover:border-primary/30"
+                    className="relative overflow-hidden rounded-3xl border-border bg-card transition-colors duration-300 hover:border-primary/30"
                   >
                     <Link
                       href={`/productos/${product.slug}`}
@@ -113,7 +113,7 @@ export function SelectedProductsFloat() {
 
                       <div className="min-w-0 flex-1">
                         <p className="text-[10px] uppercase tracking-[0.18em] text-primary">
-                          {product.categoryLabel}
+                          {product.occasionLabel}
                         </p>
                         <div className="mt-1 block font-serif text-lg leading-tight text-foreground">
                           {product.name}
@@ -127,7 +127,7 @@ export function SelectedProductsFloat() {
                     <button
                       type="button"
                       onClick={() => removeSelectedProduct(product.slug)}
-                      className="absolute right-3 top-3 inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-border bg-background px-4 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:border-primary/40 hover:text-primary"
+                      className="absolute right-3 top-3 inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-border bg-background px-3 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:border-primary/40 hover:text-primary"
                     >
                       Quitar
                     </button>

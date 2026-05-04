@@ -1,6 +1,7 @@
 'use client'
 
 import type { Product } from '@/data/products'
+import { getOccasionLabel, getPrimaryOccasion } from '@/helpers/products'
 
 const STORAGE_KEY = 'floreria-selected-products'
 const EVENT_NAME = 'floreria:selected-products-updated'
@@ -8,8 +9,10 @@ const MAX_ITEMS = 12
 
 type SelectedProduct = Pick<
   Product,
-  'slug' | 'name' | 'category' | 'categoryLabel' | 'shortDescription' | 'description' | 'image' | 'badges' | 'isCondolence'
->
+  'slug' | 'name' | 'occasions' | 'shortDescription' | 'description' | 'image' | 'badges' | 'isCondolence'
+> & {
+  occasionLabel: string
+}
 
 function isBrowser() {
   return typeof window !== 'undefined'
@@ -21,11 +24,12 @@ function isSelectedProduct(value: unknown): value is SelectedProduct {
   return (
     typeof product.slug === 'string' &&
     typeof product.name === 'string' &&
-    typeof product.categoryLabel === 'string' &&
+    typeof product.occasionLabel === 'string' &&
     typeof product.shortDescription === 'string' &&
     typeof product.description === 'string' &&
     typeof product.image === 'string' &&
-    Array.isArray(product.badges)
+    Array.isArray(product.badges) &&
+    Array.isArray(product.occasions)
   )
 }
 
@@ -53,11 +57,16 @@ export function saveSelectedProducts(items: SelectedProduct[]) {
   emitUpdate()
 }
 
-export function addSelectedProduct(product: SelectedProduct) {
+export function addSelectedProduct(product: Product) {
   if (!product?.slug) return
 
+  const selectedProduct: SelectedProduct = {
+    ...product,
+    occasionLabel: getOccasionLabel(getPrimaryOccasion(product)),
+  }
+
   const current = getSelectedProducts().filter((item) => item.slug !== product.slug)
-  const next = [product, ...current].slice(0, MAX_ITEMS)
+  const next = [selectedProduct, ...current].slice(0, MAX_ITEMS)
   saveSelectedProducts(next)
 }
 

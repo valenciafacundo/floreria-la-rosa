@@ -9,7 +9,7 @@ import { ThemeSwitcher } from '@/components/theme-switcher/theme-switcher'
 
 const navLinks = [
   { href: '/', label: 'Inicio' },
-  { href: '/catalogo', label: 'Catálogo' },
+  { href: '/#catalogo', label: 'Catálogo' },
   { href: '/#opiniones', label: 'Opiniones' },
   { href: '/#contacto', label: 'Contacto' },
 ]

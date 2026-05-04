@@ -1,40 +1,68 @@
-import { products, type Product, type ProductCategory } from '@/data/products'
+import {
+  badgeLabels,
+  occasions,
+  products,
+  type Product,
+  type ProductOccasion,
+} from '@/data/products'
 
 export function getProductBySlug(slug: string): Product | undefined {
   return products.find((p) => p.slug === slug)
 }
 
-export function getRelatedProducts(product: Product, limit = 3): Product[] {
-  // Misma categoría primero, sin incluir el producto actual.
-  const sameCategory = products.filter(
-    (p) => p.category === product.category && p.slug !== product.slug,
+export function getOccasionLabel(occasion: ProductOccasion): string {
+  return (
+    occasions.find((item) => item.value === occasion)?.label ||
+    occasion.replace(/-/g, ' ')
   )
-  if (sameCategory.length >= limit) return sameCategory.slice(0, limit)
+}
 
-  // Si no alcanza, completar con otros (no condolencias si el actual no lo es).
-  const others = products.filter(
-    (p) =>
-      p.slug !== product.slug &&
-      p.category !== product.category &&
-      (product.isCondolence ? p.isCondolence : !p.isCondolence),
+export function getPrimaryOccasion(product: Product): ProductOccasion {
+  return product.occasions[0] || 'regalos'
+}
+
+export function getRelatedProducts(product: Product, limit = 3): Product[] {
+  const sameOccasion = products.filter(
+    (candidate) =>
+      candidate.slug !== product.slug &&
+      candidate.occasions.some((occasion) => product.occasions.includes(occasion)),
   )
-  return [...sameCategory, ...others].slice(0, limit)
+
+  if (sameOccasion.length >= limit) return sameOccasion.slice(0, limit)
+
+  const others = products.filter(
+    (candidate) =>
+      candidate.slug !== product.slug &&
+      !sameOccasion.some((item) => item.slug === candidate.slug) &&
+      (product.isCondolence ? candidate.isCondolence : !candidate.isCondolence),
+  )
+
+  return [...sameOccasion, ...others].slice(0, limit)
 }
 
 export function filterProducts(
   query: string,
-  category: ProductCategory | 'todos',
+  occasion: ProductOccasion | 'todos',
 ): Product[] {
   const q = query.trim().toLowerCase()
-  return products.filter((p) => {
-    const matchCategory = category === 'todos' || p.category === category
-    if (!matchCategory) return false
+
+  return products.filter((product) => {
+    const matchesOccasion =
+      occasion === 'todos' || product.occasions.includes(occasion)
+
+    if (!matchesOccasion) return false
     if (!q) return true
+
+    const occasionLabels = product.occasions.map((item) => getOccasionLabel(item).toLowerCase())
+    const badges = product.badges.map((badge) => badgeLabels[badge].toLowerCase())
+
     return (
-      p.name.toLowerCase().includes(q) ||
-      p.categoryLabel.toLowerCase().includes(q) ||
-      p.shortDescription.toLowerCase().includes(q) ||
-      p.description.toLowerCase().includes(q)
+      product.name.toLowerCase().includes(q) ||
+      product.shortDescription.toLowerCase().includes(q) ||
+      product.description.toLowerCase().includes(q) ||
+      product.occasions.some((item) => item.toLowerCase().includes(q)) ||
+      occasionLabels.some((label) => label.includes(q)) ||
+      badges.some((badge) => badge.includes(q))
     )
   })
 }
@@ -45,4 +73,11 @@ export function getFeaturedProducts(): Product[] {
 
 export function getNewProducts(): Product[] {
   return products.filter((p) => p.badges.includes('nuevo')).slice(0, 4)
+}
+
+export function getProductsByOccasion(
+  occasion: ProductOccasion,
+  limit = 4,
+): Product[] {
+  return products.filter((product) => product.occasions.includes(occasion)).slice(0, limit)
 }

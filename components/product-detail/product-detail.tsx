@@ -1,29 +1,30 @@
-import Link from 'next/link'
+import Link from "next/link";
+import { MessageCircle, Phone, ArrowLeft, Home, Leaf } from "lucide-react";
+import { type Product, badgeLabels } from "@/data/products";
+import { whatsappForProduct, PHONE_HREF } from "@/helpers/whatsapp";
 import {
-  MessageCircle,
-  Phone,
-  ArrowLeft,
-  Home,
-  Leaf,
-} from 'lucide-react'
-import { type Product, badgeLabels } from '@/data/products'
-import { whatsappForProduct, PHONE_HREF } from '@/helpers/whatsapp'
-import { getRelatedProducts } from '@/helpers/products'
-import { ExtrasSection } from '@/components/extras-section/extras-section'
-import { ProductGrid } from '@/components/product-grid/product-grid'
-import { ProductImageZoom } from '@/components/product-detail/product-image-zoom'
+  getOccasionLabel,
+  getPrimaryOccasion,
+  getRelatedProducts,
+} from "@/helpers/products";
+import { ExtrasSection } from "@/components/extras-section/extras-section";
+import { ProductGrid } from "@/components/product-grid/product-grid";
+import { ProductImageZoom } from "@/components/product-detail/product-image-zoom";
 
 interface ProductDetailProps {
-  product: Product
+  product: Product;
 }
 
 export function ProductDetail({ product }: ProductDetailProps) {
-  const related = getRelatedProducts(product, 3)
+  const related = getRelatedProducts(product, 3);
 
   return (
     <article className="bg-background">
       <div className="mx-auto max-w-7xl px-4 pb-16 pt-8 md:px-8 md:pb-24 md:pt-12">
-        <nav aria-label="Migas de pan" className="mb-6 text-xs text-muted-foreground">
+        <nav
+          aria-label="Migas de pan"
+          className="mb-6 text-xs text-muted-foreground"
+        >
           <ol className="flex flex-wrap items-center gap-1">
             <li>
               <Link href="/" className="hover:text-primary">
@@ -32,7 +33,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
             </li>
             <li aria-hidden="true">/</li>
             <li>
-              <Link href="/catalogo" className="hover:text-primary">
+              <Link href="/#catalogo" className="hover:text-primary">
                 Catálogo
               </Link>
             </li>
@@ -50,14 +51,14 @@ export function ProductDetail({ product }: ProductDetailProps) {
           <div className="flex flex-col gap-5">
             <div className="flex flex-wrap items-center gap-2">
               <span className="rounded-full bg-secondary px-3 py-1 text-xs uppercase tracking-[0.18em] text-primary">
-                {product.categoryLabel}
+                {getOccasionLabel(getPrimaryOccasion(product))}
               </span>
-              {product.badges.map((b) => (
+              {product.badges.map((badge) => (
                 <span
-                  key={b}
+                  key={badge}
                   className="rounded-full border border-border bg-card px-3 py-1 text-[11px] font-medium uppercase tracking-wider"
                 >
-                  {badgeLabels[b]}
+                  {badgeLabels[badge]}
                 </span>
               ))}
             </div>
@@ -70,18 +71,26 @@ export function ProductDetail({ product }: ProductDetailProps) {
               {product.description}
             </p>
 
-            <div
-              className={
-                product.isCondolence
-                  ? 'flex items-start gap-3 rounded-2xl border border-border bg-secondary/40 p-4 text-sm leading-relaxed text-muted-foreground'
-                  : 'flex items-start gap-3 rounded-2xl border border-border bg-secondary/40 p-4 text-sm leading-relaxed text-muted-foreground'
-              }
-            >
-              <Leaf className="mt-0.5 h-4 w-4 flex-none text-primary" aria-hidden="true" />
+            <div className="flex flex-wrap gap-2 text-xs text-muted-foreground">
+              {product.occasions.map((occasion) => (
+                <span
+                  key={occasion}
+                  className="rounded-full border border-border bg-card px-3 py-1"
+                >
+                  {getOccasionLabel(occasion)}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex items-start gap-3 rounded-2xl border border-border bg-secondary/40 p-4 text-sm leading-relaxed text-muted-foreground">
+              <Leaf
+                className="mt-0.5 h-4 w-4 flex-none text-primary"
+                aria-hidden="true"
+              />
               <p>
                 {product.isCondolence
-                  ? 'Coordinamos la entrega directa al velatorio o domicilio con la sobriedad y respeto que el momento merece.'
-                  : 'Trabajamos con flores frescas seleccionadas según la temporada. Te asesoramos por colores, tamaños y combinaciones.'}
+                  ? "Coordinamos la entrega directa al velatorio o domicilio con la sobriedad y respeto que el momento merece."
+                  : "Las imágenes son referenciales. Trabajamos con flores frescas de temporada, por lo que colores y variedades pueden variar según disponibilidad."}
               </p>
             </div>
 
@@ -106,7 +115,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
 
             <div className="mt-2 flex flex-wrap gap-2">
               <Link
-                href="/catalogo"
+                href="/#catalogo"
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-xs text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
               >
                 <ArrowLeft className="h-3.5 w-3.5" aria-hidden="true" />
@@ -141,7 +150,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
                 </h2>
               </div>
               <Link
-                href="/catalogo"
+                href="/#catalogo"
                 className="text-sm text-primary hover:underline"
               >
                 Ver todo el catálogo →
@@ -154,5 +163,5 @@ export function ProductDetail({ product }: ProductDetailProps) {
         )}
       </div>
     </article>
-  )
+  );
 }
