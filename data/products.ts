@@ -19,6 +19,7 @@ export type ProductBadge =
 export interface Product {
   slug: string
   name: string
+  primaryOccasion: ProductOccasion
   occasions: ProductOccasion[]
   shortDescription: string
   description: string
@@ -52,6 +53,7 @@ export const products: Product[] = [
   {
     slug: 'ramo-rosas-rojas-clasico',
     name: 'Ramo de Rosas Rojas Clásico',
+    primaryOccasion: 'amor',
     occasions: ['amor', 'aniversario', 'regalos', 'dia-de-la-madre'],
     shortDescription:
       'Doce rosas rojas seleccionadas, envueltas con dedicación artesanal.',
@@ -63,6 +65,7 @@ export const products: Product[] = [
   {
     slug: 'bouquet-primavera-pastel',
     name: 'Bouquet Primavera Pastel',
+    primaryOccasion: 'cumpleanos',
     occasions: ['cumpleanos', 'primavera', 'celebraciones', 'dia-de-la-mujer', 'regalos'],
     shortDescription:
       'Mezcla suave de tonos pastel con flores frescas de temporada.',
@@ -74,6 +77,7 @@ export const products: Product[] = [
   {
     slug: 'caja-rosas-blancas-eternas',
     name: 'Caja de Rosas Blancas',
+    primaryOccasion: 'aniversario',
     occasions: ['aniversario', 'amor', 'regalos', 'dia-de-la-madre'],
     shortDescription: 'Rosas blancas presentadas en caja artesanal de lujo.',
     description:
@@ -84,6 +88,7 @@ export const products: Product[] = [
   {
     slug: 'ramo-girasoles-campo',
     name: 'Ramo de Girasoles del Campo',
+    primaryOccasion: 'primavera',
     occasions: ['cumpleanos', 'primavera', 'celebraciones', 'regalos', 'dia-de-la-madre'],
     shortDescription: 'Girasoles frescos que transmiten alegría y luz.',
     description:
@@ -94,6 +99,7 @@ export const products: Product[] = [
   {
     slug: 'arreglo-bebe-nina',
     name: 'Arreglo Bienvenida Bebé Niña',
+    primaryOccasion: 'nacimiento',
     occasions: ['nacimiento', 'regalos', 'celebraciones'],
     shortDescription:
       'Flores en tonos rosados para celebrar la llegada.',
@@ -105,6 +111,7 @@ export const products: Product[] = [
   {
     slug: 'arreglo-bebe-nino',
     name: 'Arreglo Bienvenida Bebé Niño',
+    primaryOccasion: 'nacimiento',
     occasions: ['nacimiento', 'regalos', 'celebraciones'],
     shortDescription:
       'Flores en tonos celeste y blanco para celebrar.',
@@ -116,6 +123,7 @@ export const products: Product[] = [
   {
     slug: 'ramo-tulipanes-mixtos',
     name: 'Ramo de Tulipanes Mixtos',
+    primaryOccasion: 'celebraciones',
     occasions: ['celebraciones', 'primavera', 'regalos', 'dia-de-la-mujer', 'dia-de-la-madre'],
     shortDescription:
       'Tulipanes frescos en una mezcla elegante de colores.',
@@ -127,6 +135,7 @@ export const products: Product[] = [
   {
     slug: 'ramo-peonias-rosadas',
     name: 'Ramo de Peonías Rosadas',
+    primaryOccasion: 'amor',
     occasions: ['amor', 'aniversario', 'primavera', 'dia-de-la-madre', 'regalos'],
     shortDescription:
       'Peonías de temporada, románticas y voluminosas.',
@@ -138,6 +147,7 @@ export const products: Product[] = [
   {
     slug: 'corona-condolencias-blanca',
     name: 'Corona de Condolencias Blanca',
+    primaryOccasion: 'condolencias',
     occasions: ['condolencias'],
     shortDescription:
       'Corona sobria con rosas y crisantemos blancos.',
@@ -150,6 +160,7 @@ export const products: Product[] = [
   {
     slug: 'corazon-condolencias',
     name: 'Corazón de Condolencias',
+    primaryOccasion: 'condolencias',
     occasions: ['condolencias'],
     shortDescription:
       'Arreglo en forma de corazón con flores blancas.',
@@ -162,6 +173,7 @@ export const products: Product[] = [
   {
     slug: 'cruz-condolencias',
     name: 'Cruz de Condolencias',
+    primaryOccasion: 'condolencias',
     occasions: ['condolencias'],
     shortDescription:
       'Cruz floral elegante en tonos blancos y verdes.',
@@ -174,6 +186,7 @@ export const products: Product[] = [
   {
     slug: 'ramo-mixto-otono',
     name: 'Ramo Mixto de Otoño',
+    primaryOccasion: 'regalos',
     occasions: ['regalos', 'celebraciones', 'cumpleanos', 'dia-de-la-madre'],
     shortDescription:
       'Tonos cálidos de temporada para un regalo especial.',

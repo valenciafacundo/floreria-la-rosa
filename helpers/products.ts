@@ -18,7 +18,7 @@ export function getOccasionLabel(occasion: ProductOccasion): string {
 }
 
 export function getPrimaryOccasion(product: Product): ProductOccasion {
-  return product.occasions[0] || 'regalos'
+  return product.primaryOccasion || product.occasions[0] || 'regalos'
 }
 
 export function getRelatedProducts(product: Product, limit = 3): Product[] {

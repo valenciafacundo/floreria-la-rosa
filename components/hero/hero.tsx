@@ -1,8 +1,32 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MessageCircle, ArrowRight, Sparkles } from "lucide-react";
+import {
+  MessageCircle,
+  ArrowRight,
+  Sparkles,
+  Truck,
+  Clock3,
+  HandHelping,
+} from "lucide-react";
 import { generalWhatsAppUrl } from "@/helpers/whatsapp";
 
+const benefits = [
+  {
+    icon: Truck,
+    title: "Envíos sin cargo",
+    description: "En toda la ciudad",
+  },
+  {
+    icon: Clock3,
+    title: "Entrega en 24hs",
+    description: "",
+  },
+  {
+    icon: HandHelping,
+    title: "Atención personalizada",
+    description: "",
+  },
+];
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
@@ -43,7 +67,30 @@ export function Hero() {
             </Link>
           </div>
 
-          <div className="mt-2 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
+          <div className="grid gap-3 border-t border-border/60 bg-background px-4 py-4 md:grid-cols-3 md:gap-6 md:px-8 md:py-5">
+            {benefits.map((benefit) => {
+              const Icon = benefit.icon;
+              return (
+                <div
+                  key={benefit.title}
+                  className="flex items-start gap-3 rounded-2xl px-1 py-1 md:px-2"
+                >
+                  <span className="mt-0.5 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  </span>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground md:text-base">
+                      {benefit.title}
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          {/* <div className="mt-2 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
             <span className="flex items-center gap-1.5">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" /> Atendemos
               24 hs
@@ -56,7 +103,7 @@ export function Hero() {
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />{" "}
               Asesoramiento personalizado
             </span>
-          </div>
+          </div> */}
 
           {/* Banner sutil para mobile y tablet: muestra una franja horizontal con la
               imagen del florista para aportar contexto visual sin ocupar todo el alto. */}
