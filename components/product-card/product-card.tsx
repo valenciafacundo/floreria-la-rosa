@@ -1,7 +1,10 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { MessageCircle, ArrowRight } from 'lucide-react'
 import { type Product, badgeLabels } from '@/data/products'
+import { addSelectedProduct } from '@/helpers/favorites'
 import { whatsappForProduct } from '@/helpers/whatsapp'
 
 interface ProductCardProps {
@@ -14,6 +17,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
     <article className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg sm:rounded-3xl">
       <Link
         href={`/productos/${product.slug}`}
+        onClick={() => addSelectedProduct(product)}
         className="relative block aspect-square overflow-hidden bg-secondary"
         aria-label={`Ver detalle de ${product.name}`}
       >
@@ -46,6 +50,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
         <h3 className="font-serif text-base leading-tight sm:text-xl">
           <Link
             href={`/productos/${product.slug}`}
+            onClick={() => addSelectedProduct(product)}
             className="hover:text-primary"
           >
             {product.name}
@@ -68,6 +73,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
           </a>
           <Link
             href={`/productos/${product.slug}`}
+            onClick={() => addSelectedProduct(product)}
             className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full border border-border bg-background px-3 py-2 text-[11px] font-medium text-foreground transition-colors hover:border-primary/40 hover:text-primary sm:px-4 sm:py-2.5 sm:text-xs"
           >
             Ver detalle
