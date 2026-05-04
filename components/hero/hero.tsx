@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import { MessageCircle, ArrowRight, Sparkles } from 'lucide-react'
-import { generalWhatsAppUrl } from '@/helpers/whatsapp'
+import Link from "next/link";
+import Image from "next/image";
+import { MessageCircle, ArrowRight, Sparkles } from "lucide-react";
+import { generalWhatsAppUrl } from "@/helpers/whatsapp";
 
 export function Hero() {
   return (
@@ -14,14 +14,14 @@ export function Hero() {
           </span>
 
           <h1 className="text-balance font-serif text-4xl leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
-            Flores que cuentan
+            Flores que son parte de
             <span className="block italic text-primary">tu historia.</span>
           </h1>
 
           <p className="max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-            Arreglos artesanales hechos a mano, con flores frescas seleccionadas según
-            la temporada. Te asesoramos para que cada ramo transmita exactamente lo que
-            querés decir.
+            Arreglos artesanales hechos a mano, con flores frescas seleccionadas
+            según la temporada. Te asesoramos para que cada ramo transmita
+            exactamente lo que querés decir.
           </p>
 
           <div className="flex flex-col gap-3 sm:flex-row">
@@ -45,13 +45,16 @@ export function Hero() {
 
           <div className="mt-2 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
             <span className="flex items-center gap-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" /> Atendemos 24 hs
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" /> Atendemos
+              24 hs
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" /> Envíos sin cargo zona centro
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" /> Envíos
+              sin cargo zona centro
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" /> Asesoramiento personalizado
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" />{" "}
+              Asesoramiento personalizado
             </span>
           </div>
 
@@ -94,7 +97,9 @@ export function Hero() {
             </p>
           </div>
           <div className="absolute -right-6 top-10 max-w-[200px] rounded-2xl border border-border bg-card p-4 shadow-lg">
-            <p className="font-serif text-sm">{'\u2605\u2605\u2605\u2605\u2605'}</p>
+            <p className="font-serif text-sm">
+              {"\u2605\u2605\u2605\u2605\u2605"}
+            </p>
             <p className="text-xs leading-snug text-muted-foreground">
               {'"La mejor florería artesanal de la zona."'}
             </p>
@@ -102,5 +107,5 @@ export function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
