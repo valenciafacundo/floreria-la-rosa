@@ -60,10 +60,10 @@ export function SelectedProductsFloat() {
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Abrir tus elegidos"
-        className="fixed bottom-5 left-5 z-40 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-5 py-3.5 text-sm font-medium text-foreground shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-[1.04] hover:bg-primary/10 hover:shadow-xl md:bottom-7 md:left-7"
+        className="fixed bottom-5 left-5 z-40 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-3 text-sm font-medium text-foreground shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-[1.04] hover:bg-primary/10 hover:shadow-xl md:bottom-7 md:left-7 md:px-5 md:py-3.5"
       >
         <Clock3 className="h-5 w-5 text-primary" aria-hidden="true" />
-        <span className="hidden md:inline">Tus elegidos 😍 </span>
+        <span>Tus elegidos 😍</span>
       </button>
 
       {mounted && (
@@ -115,7 +115,7 @@ export function SelectedProductsFloat() {
                     <Link
                       href={`/productos/${product.slug}`}
                       onClick={() => setOpen(false)}
-                      className="flex items-start gap-3 p-3 pr-24"
+                      className="flex items-start gap-3 p-3 pb-16 pr-3 min-[769px]:pr-24 min-[769px]:pb-3"
                     >
                       <div className="h-24 w-24 shrink-0 overflow-hidden rounded-2xl bg-white p-2">
                         <img
@@ -141,7 +141,7 @@ export function SelectedProductsFloat() {
                     <button
                       type="button"
                       onClick={() => removeSelectedProduct(product.slug)}
-                      className="absolute right-3 top-1/2 inline-flex min-h-11 min-w-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background px-3 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:border-primary/40 hover:text-primary"
+                      className="absolute right-3 top-1/2 inline-flex min-h-11 min-w-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background px-3 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:border-primary/40 hover:text-primary max-[768px]:bottom-3 max-[768px]:left-1/2 max-[768px]:right-auto max-[768px]:top-auto max-[768px]:-translate-x-1/2 max-[768px]:translate-y-0 max-[768px]:px-4"
                     >
                       Quitar
                     </button>
