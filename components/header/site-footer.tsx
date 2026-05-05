@@ -1,6 +1,10 @@
-import Link from 'next/link'
-import { Flower2, MessageCircle, Phone, MapPin, Clock } from 'lucide-react'
-import { generalWhatsAppUrl, PHONE_HREF, PHONE_NUMBER } from '@/helpers/whatsapp'
+import Link from "next/link";
+import { Flower2, MessageCircle, Phone, MapPin, Clock } from "lucide-react";
+import {
+  generalWhatsAppUrl,
+  PHONE_HREF,
+  PHONE_NUMBER,
+} from "@/helpers/whatsapp";
 
 export function SiteFooter() {
   return (
@@ -11,11 +15,13 @@ export function SiteFooter() {
             <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
               <Flower2 className="h-5 w-5" aria-hidden="true" />
             </span>
-            <span className="font-serif text-2xl tracking-tight">Florería La Rosa</span>
+            <span className="font-serif text-2xl tracking-tight">
+              Florería La Rosa
+            </span>
           </Link>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
-            Arreglos florales artesanales hechos con dedicación. Te asesoramos para que
-            cada ramo cuente la historia que querés contar.
+            Arreglos florales artesanales hechos con dedicación. Te asesoramos
+            para que cada ramo cuente la historia que querés contar.
           </p>
         </div>
 
@@ -49,7 +55,10 @@ export function SiteFooter() {
           <h3 className="font-serif text-lg">Contacto</h3>
           <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
             <li className="flex items-start gap-2">
-              <MessageCircle className="mt-0.5 h-4 w-4 text-primary" aria-hidden="true" />
+              <MessageCircle
+                className="mt-0.5 h-4 w-4 text-primary"
+                aria-hidden="true"
+              />
               <a
                 href={generalWhatsAppUrl}
                 target="_blank"
@@ -60,17 +69,26 @@ export function SiteFooter() {
               </a>
             </li>
             <li className="flex items-start gap-2">
-              <Phone className="mt-0.5 h-4 w-4 text-primary" aria-hidden="true" />
+              <Phone
+                className="mt-0.5 h-4 w-4 text-primary"
+                aria-hidden="true"
+              />
               <a href={PHONE_HREF} className="hover:text-primary">
                 {PHONE_NUMBER}
               </a>
             </li>
             <li className="flex items-start gap-2">
-              <Clock className="mt-0.5 h-4 w-4 text-primary" aria-hidden="true" />
+              <Clock
+                className="mt-0.5 h-4 w-4 text-primary"
+                aria-hidden="true"
+              />
               <span>Atendemos todos los días, 24 hs.</span>
             </li>
             <li className="flex items-start gap-2">
-              <MapPin className="mt-0.5 h-4 w-4 text-primary" aria-hidden="true" />
+              <MapPin
+                className="mt-0.5 h-4 w-4 text-primary"
+                aria-hidden="true"
+              />
               <span>Envíos sin cargo en zona centro.</span>
             </li>
           </ul>
@@ -79,10 +97,13 @@ export function SiteFooter() {
 
       <div className="border-t border-border/60">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-6 text-xs text-muted-foreground md:flex-row md:px-8">
-          <p>© {new Date().getFullYear()} Florería La Rosa. Ramos y arreglos artesanales.</p>
+          <p>
+            © {new Date().getFullYear()} Florería La Rosa. Ramos y arreglos
+            artesanales.
+          </p>
           <p>Hecho con dedicación, como cada uno de nuestros ramos.</p>
         </div>
       </div>
     </footer>
-  )
+  );
 }

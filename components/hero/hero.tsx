@@ -31,7 +31,7 @@ const benefits = [
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 pb-8 pt-8 md:px-8 md:pb-10 md:pt-10 lg:grid-cols-2 lg:items-center lg:gap-12 lg:pb-6 lg:pt-6">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 pb-8 pt-8 md:px-8 md:pb-10 md:pt-10 lg:grid-cols-2 lg:items-center lg:gap-10 lg:pb-4 lg:pt-4 xl:gap-12">
         <div className="flex flex-col gap-5">
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs uppercase tracking-[0.18em] text-muted-foreground">
             <Sparkles className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
@@ -112,7 +112,7 @@ export function Hero() {
         </div>
 
         <div className="relative hidden lg:block">
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] bg-secondary shadow-xl">
+          <div className="relative aspect-[4/5] max-h-[600px] w-full overflow-hidden rounded-[2rem] bg-secondary shadow-xl xl:max-h-[680px]">
             <Image
               src="/hero-florist.jpg"
               alt="Manos de florista artesanal armando un ramo de flores frescas de temporada"
