@@ -110,7 +110,7 @@ export function SelectedProductsFloat() {
                 {selectedProducts.map((product) => (
                   <div
                     key={product.slug}
-                    className="relative overflow-hidden rounded-3xl border-border bg-card transition-colors duration-300 hover:border-primary/30"
+                    className="relative overflow-hidden rounded-3xl border border-border bg-card transition-colors duration-300 hover:border-primary/30"
                   >
                     <Link
                       href={`/productos/${product.slug}`}
@@ -121,7 +121,7 @@ export function SelectedProductsFloat() {
                         <img
                           src={product.image}
                           alt={product.name}
-                          className="h-full w-full object-contain"
+                          className="h-full w-full object-cover"
                         />
                       </div>
 

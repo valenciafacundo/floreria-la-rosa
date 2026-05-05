@@ -1,16 +1,16 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import Link from 'next/link'
-import { MessageCircle, ArrowRight } from 'lucide-react'
-import { type Product, badgeLabels } from '@/data/products'
-import { addSelectedProduct } from '@/helpers/favorites'
-import { getOccasionLabel, getPrimaryOccasion } from '@/helpers/products'
-import { whatsappForProduct } from '@/helpers/whatsapp'
+import Image from "next/image";
+import Link from "next/link";
+import { MessageCircle, ArrowRight } from "lucide-react";
+import { type Product, badgeLabels } from "@/data/products";
+import { addSelectedProduct } from "@/helpers/favorites";
+import { getOccasionLabel, getPrimaryOccasion } from "@/helpers/products";
+import { whatsappForProduct } from "@/helpers/whatsapp";
 
 interface ProductCardProps {
-  product: Product
-  priority?: boolean
+  product: Product;
+  priority?: boolean;
 }
 
 export function ProductCard({ product, priority = false }: ProductCardProps) {
@@ -19,7 +19,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
       <Link
         href={`/productos/${product.slug}`}
         onClick={() => addSelectedProduct(product)}
-        className="relative block aspect-[4/4.5] overflow-hidden bg-white p-3 sm:p-4"
+        className="relative block aspect-square overflow-hidden bg-white p-3 sm:p-4"
         aria-label={`Ver detalle de ${product.name}`}
       >
         <Image
@@ -45,9 +45,9 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
       </Link>
 
       <div className="flex flex-1 flex-col gap-2 p-3 sm:gap-3 sm:p-5">
-        <span className="text-[10px] uppercase tracking-[0.18em] text-primary sm:text-xs">
+        {/* <span className="text-[10px] uppercase tracking-[0.18em] text-primary sm:text-xs">
           {getOccasionLabel(getPrimaryOccasion(product))}
-        </span>
+        </span> */}
         <h3 className="font-serif text-base leading-tight sm:text-xl">
           <Link
             href={`/productos/${product.slug}`}
@@ -82,5 +82,5 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
         </div>
       </div>
     </article>
-  )
+  );
 }
