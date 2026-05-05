@@ -33,7 +33,7 @@
 
 /* Tema Rosa (default) — burgundy elegante con fondo blush cálido.
    Pensado para "La Rosa": rojo profundo y romántico sin caer en el rosa pastel. */
-:root,
+   :root,
 [data-theme='rosa'] {
   --background: oklch(0.975 0.012 20);
   --foreground: oklch(0.22 0.04 20);
@@ -53,6 +53,7 @@
 }
 
 /* Tema Verde Salvia — sage profundo con fondo crema cálido y acento durazno. */
+
 [data-theme='verde'] {
   --background: oklch(0.975 0.012 95);
   --foreground: oklch(0.24 0.03 150);

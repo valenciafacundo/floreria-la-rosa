@@ -48,6 +48,7 @@ export default function RootLayout({
     <html
       lang="es"
       className={`bg-background ${plusJakartaSans.variable}`}
+      data-theme="verde"
       suppressHydrationWarning
     >
       <head>
