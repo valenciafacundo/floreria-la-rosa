@@ -4,22 +4,22 @@ const inlineExtras = [
   {
     label: "Chocolates",
     description: "+ detalle dulce",
-    image: "/extras/chocolates.jpg",
+    image: "/extras/chocolates.png",
   },
   {
     label: "Globo personalizado",
     description: "Con tu mensaje",
-    image: "/extras/globos.jpg",
+    image: "/extras/globos.png",
   },
   {
     label: "Peluche extra",
     description: "Más ternura",
-    image: "/extras/peluche.jpg",
+    image: "/extras/peluche.png",
   },
   {
     label: "Tarjeta premium",
     description: "Dedicatoria especial",
-    image: "/extras/tarjeta.jpg",
+    image: "/extras/tarjeta.png",
   },
 ];
 
@@ -33,7 +33,7 @@ export function ProductExtrasInline() {
         {inlineExtras.map((extra) => (
           <div
             key={extra.label}
-            className="group flex flex-col rounded-2xl border border-border bg-card/50 p-2 transition-all hover:border-primary/20 hover:bg-card hover:shadow-sm"
+            className="group flex flex-col rounded-2xl bg-white p-2 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
           >
             <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-muted">
               <Image

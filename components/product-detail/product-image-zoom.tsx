@@ -28,7 +28,7 @@ export function ProductImageZoom({ src, alt }: ProductImageZoomProps) {
       onMouseEnter={() => setZooming(true)}
       onMouseLeave={() => setZooming(false)}
       onMouseMove={handleMove}
-      className="relative aspect-[4/3.2] w-full overflow-hidden rounded-[2rem] bg-secondary shadow-md"
+      className="relative aspect-[4/3.5] w-full overflow-hidden rounded-[2rem] bg-white p-4 shadow-md md:p-8"
     >
       <Image
         src={src}
@@ -36,7 +36,7 @@ export function ProductImageZoom({ src, alt }: ProductImageZoomProps) {
         fill
         priority
         sizes="(max-width: 768px) 100vw, 50vw"
-        className="object-cover transition-transform duration-200 md:duration-100"
+        className="object-contain transition-transform duration-200 md:duration-100"
         style={
           zooming
             ? {

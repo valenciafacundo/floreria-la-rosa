@@ -52,202 +52,387 @@ export const badgeLabels: Record<ProductBadge, string> = {
 
 export const products: Product[] = [
   {
-    slug: 'ramo-rosas-rojas-clasico',
-    name: 'Ramo de Rosas Rojas Clásico',
-    primaryOccasion: 'amor',
-    occasions: ['amor', 'aniversario', 'regalos', 'dia-de-la-madre'],
-    shortDescription:
-      'Doce rosas rojas seleccionadas, envueltas con dedicación artesanal.',
-    description:
-      'Un ramo eterno que habla por sí solo. Doce rosas rojas frescas, seleccionadas una por una en nuestra florería, envueltas con papel artesanal y un lazo de seda. Ideal para declaraciones de amor, aniversarios y momentos que merecen quedar grabados.',
-    image: '/products/ramo-rosas-rojas.jpg',
-    badges: ['mas-vendido', 'ideal-regalo'],
-    features: [
-      'Flores seleccionadas de temporada',
-      'Presentación lista para regalar',
-      'Tarjeta con dedicatoria (opcional)',
-      'Envío con cuidados especiales',
-    ],
-  },
-  {
-    slug: 'bouquet-primavera-pastel',
-    name: 'Bouquet Primavera Pastel',
-    primaryOccasion: 'cumpleanos',
-    occasions: ['cumpleanos', 'primavera', 'celebraciones', 'dia-de-la-mujer', 'regalos'],
-    shortDescription:
-      'Mezcla suave de tonos pastel con flores frescas de temporada.',
-    description:
-      'Un bouquet luminoso con peonías, lisianthus y rosas en tonos rosados, durazno y crema. Perfecto para cumpleaños, celebraciones especiales o simplemente para alegrar el día de alguien que querés mucho.',
-    image: '/products/bouquet-primavera.jpg',
-    badges: ['nuevo', 'temporada'],
-    features: [
-      'Flores frescas de estación',
-      'Combinación de tonos pastel',
-      'Presentación lista para regalar',
-      'Tarjeta con dedicatoria (opcional)',
-    ],
-  },
-  {
-    slug: 'caja-rosas-blancas-eternas',
-    name: 'Caja de Rosas Blancas',
-    primaryOccasion: 'aniversario',
-    occasions: ['aniversario', 'amor', 'regalos', 'dia-de-la-madre'],
-    shortDescription: 'Rosas blancas presentadas en caja artesanal de lujo.',
-    description:
-      'Elegancia pura. Una caja artesanal con rosas blancas frescas, perfectas para aniversarios, propuestas y momentos elegantes. Cada rosa es seleccionada por su forma y frescura.',
-    image: '/products/caja-rosas-blancas.jpg',
+    slug: 'corona-roja-y-blanca-con-mono',
+    name: 'Corona Roja y Blanca con Moño',
+    primaryOccasion: 'condolencias',
+    occasions: ['condolencias'],
+    shortDescription: 'Ideal para condolencias y homenajes institucionales',
+    description: 'Hermoso arreglo floral de la categoría coronas. Ideal para condolencias y homenajes institucionales. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/corona_1.jpg',
     badges: ['mas-vendido'],
+    isCondolence: true,
     features: [
-      'Rosas blancas premium',
-      'Caja artesanal de lujo',
-      'Presentación lista para regalar',
-      'Tarjeta con dedicatoria (opcional)',
-    ],
+      "Mantener en un lugar fresco y ventilado. Rociar suavemente con agua cada 12 horas para conservar la frescura",
+      "Disponibles para entrega en el día. Coordinamos horarios especiales para ceremonias y servicios fúnebres",
+      "Encargos y disponibilidad"
+    ]
   },
   {
-    slug: 'ramo-girasoles-campo',
-    name: 'Ramo de Girasoles del Campo',
-    primaryOccasion: 'primavera',
-    occasions: ['cumpleanos', 'primavera', 'celebraciones', 'regalos', 'dia-de-la-madre'],
-    shortDescription: 'Girasoles frescos que transmiten alegría y luz.',
-    description:
-      'Girasoles seleccionados acompañados de follaje verde fresco. Un ramo que regala sonrisas y transmite la calidez del sol en cada flor. Ideal para cumpleaños y momentos felices.',
-    image: '/products/ramo-girasoles.jpg',
-    badges: ['ideal-regalo', 'temporada'],
-    features: [
-      'Girasoles seleccionados',
-      'Follaje verde fresco',
-      'Presentación artesanal',
-      'Tarjeta con dedicatoria (opcional)',
-    ],
-  },
-  {
-    slug: 'arreglo-bebe-nina',
-    name: 'Arreglo Bienvenida Bebé Niña',
-    primaryOccasion: 'nacimiento',
-    occasions: ['nacimiento', 'regalos', 'celebraciones'],
-    shortDescription:
-      'Flores en tonos rosados para celebrar la llegada.',
-    description:
-      'Un arreglo dulce y delicado en tonos rosa pálido y blanco, pensado para dar la bienvenida a una nueva vida. Incluye rosas, gypsophila y un toque artesanal único.',
-    image: '/products/arreglo-bebe-nina.jpg',
-    badges: ['ideal-regalo'],
-    features: [
-      'Flores en tonos rosados',
-      'Arreglo dulce y delicado',
-      'Ideal para nacimientos',
-      'Tarjeta con dedicatoria incluida',
-    ],
-  },
-  {
-    slug: 'arreglo-bebe-nino',
-    name: 'Arreglo Bienvenida Bebé Niño',
-    primaryOccasion: 'nacimiento',
-    occasions: ['nacimiento', 'regalos', 'celebraciones'],
-    shortDescription:
-      'Flores en tonos celeste y blanco para celebrar.',
-    description:
-      'Arreglo en tonos celestes y blancos con rosas, lisianthus y follaje fresco. Una manera cálida y artesanal de saludar a la nueva familia.',
-    image: '/products/arreglo-bebe-nino.jpg',
-    badges: ['ideal-regalo'],
-    features: [
-      'Flores en tonos celestes',
-      'Arreglo artesanal premium',
-      'Ideal para recién nacidos',
-      'Tarjeta con dedicatoria incluida',
-    ],
-  },
-  {
-    slug: 'ramo-tulipanes-mixtos',
-    name: 'Ramo de Tulipanes Mixtos',
-    primaryOccasion: 'celebraciones',
-    occasions: ['celebraciones', 'primavera', 'regalos', 'dia-de-la-mujer', 'dia-de-la-madre'],
-    shortDescription:
-      'Tulipanes frescos en una mezcla elegante de colores.',
-    description:
-      'Tulipanes holandeses frescos en una mezcla cuidadosamente elegida de colores que transmiten elegancia y modernidad. Una opción versátil para cualquier celebración.',
-    image: '/products/ramo-tulipanes.jpg',
-    badges: ['nuevo', 'temporada'],
-    features: [
-      'Tulipanes holandeses frescos',
-      'Variedad de colores vibrantes',
-      'Elegancia y modernidad',
-      'Presentación de lujo',
-    ],
-  },
-  {
-    slug: 'ramo-peonias-rosadas',
-    name: 'Ramo de Peonías Rosadas',
-    primaryOccasion: 'amor',
-    occasions: ['amor', 'aniversario', 'primavera', 'dia-de-la-madre', 'regalos'],
-    shortDescription:
-      'Peonías de temporada, románticas y voluminosas.',
-    description:
-      'Peonías frescas en su mejor momento, símbolo de romance y prosperidad. Un ramo voluminoso, suave y profundamente romántico. Disponible solo en temporada.',
-    image: '/products/ramo-peonias.jpg',
-    badges: ['temporada', 'ideal-regalo'],
-    features: [
-      'Peonías frescas de temporada',
-      'Ramo voluminoso y romántico',
-      'Símbolo de prosperidad',
-      'Disponibilidad limitada',
-    ],
-  },
-  {
-    slug: 'corona-condolencias-blanca',
-    name: 'Corona de Condolencias Blanca',
+    slug: 'corona-rosa-y-blanca-con-mono',
+    name: 'Corona Rosa y Blanca con Moño',
     primaryOccasion: 'condolencias',
     occasions: ['condolencias'],
-    shortDescription:
-      'Corona sobria con rosas y crisantemos blancos.',
-    description:
-      'Una corona elaborada con respeto y dedicación, en tonos blancos y verdes. Acompaña con elegancia momentos difíciles. Coordinamos entrega directa al velatorio.',
-    image: '/products/corona-condolencias.jpg',
-    badges: [],
+    shortDescription: 'Perfecta para velatorios y ceremonias religiosas',
+    description: 'Hermoso arreglo floral de la categoría coronas. Perfecta para velatorios y ceremonias religiosas. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/corona_2.jpg',
+    badges: ['nuevo'],
     isCondolence: true,
+    features: [
+      "Mantener en un lugar fresco y ventilado. Rociar suavemente con agua cada 12 horas para conservar la frescura",
+      "Disponibles para entrega en el día. Coordinamos horarios especiales para ceremonias y servicios fúnebres",
+      "Encargos y disponibilidad"
+    ]
   },
   {
-    slug: 'corazon-condolencias',
-    name: 'Corazón de Condolencias',
+    slug: 'corona-blanca-y-roja-con-mono',
+    name: 'Corona Blanca y Roja con Moño',
     primaryOccasion: 'condolencias',
     occasions: ['condolencias'],
-    shortDescription:
-      'Arreglo en forma de corazón con flores blancas.',
-    description:
-      'Un arreglo en forma de corazón con flores blancas frescas, transmite consuelo y respeto. Elaborado por nuestros maestros floristas con la sobriedad que el momento merece.',
-    image: '/products/corazon-condolencias.jpg',
+    shortDescription: 'Adecuada para despedidas íntimas y recordatorios colectivos',
+    description: 'Hermoso arreglo floral de la categoría coronas. Adecuada para despedidas íntimas y recordatorios colectivos. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/corona_3.jpg',
     badges: [],
     isCondolence: true,
+    features: [
+      "Mantener en un lugar fresco y ventilado. Rociar suavemente con agua cada 12 horas para conservar la frescura",
+      "Disponibles para entrega en el día. Coordinamos horarios especiales para ceremonias y servicios fúnebres",
+      "Encargos y disponibilidad"
+    ]
   },
   {
-    slug: 'cruz-condolencias',
-    name: 'Cruz de Condolencias',
+    slug: 'corona-morada-y-blanca-con-mono',
+    name: 'Corona Morada y Blanca con Moño',
     primaryOccasion: 'condolencias',
     occasions: ['condolencias'],
-    shortDescription:
-      'Cruz floral elegante en tonos blancos y verdes.',
-    description:
-      'Cruz floral confeccionada artesanalmente con rosas, lisianthus y follaje. Un homenaje sobrio y respetuoso para acompañar a quienes lo necesitan.',
-    image: '/products/cruz-condolencias.jpg',
+    shortDescription: 'Recomendada para homenajes y despedidas de seres queridos',
+    description: 'Hermoso arreglo floral de la categoría coronas. Recomendada para homenajes y despedidas de seres queridos. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/corona_4.jpg',
     badges: [],
     isCondolence: true,
+    features: [
+      "Mantener en un lugar fresco y ventilado. Rociar suavemente con agua cada 12 horas para conservar la frescura",
+      "Disponibles para entrega en el día. Coordinamos horarios especiales para ceremonias y servicios fúnebres",
+      "Encargos y disponibilidad"
+    ]
   },
   {
-    slug: 'ramo-mixto-otono',
-    name: 'Ramo Mixto de Otoño',
+    slug: 'corona-fucsia-y-blanca',
+    name: 'Corona Fucsia y Blanca',
+    primaryOccasion: 'condolencias',
+    occasions: ['condolencias'],
+    shortDescription: 'Especial para despedidas y homenajes',
+    description: 'Hermoso arreglo floral de la categoría coronas. Especial para despedidas y homenajes. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/corona_5.jpg',
+    badges: [],
+    isCondolence: true,
+    features: [
+      "Mantener en un lugar fresco y ventilado. Rociar suavemente con agua cada 12 horas para conservar la frescura",
+      "Disponibles para entrega en el día. Coordinamos horarios especiales para ceremonias y servicios fúnebres",
+      "Encargos y disponibilidad"
+    ]
+  },
+  {
+    slug: 'corona-blanca-y-roja',
+    name: 'Corona Blanca y Roja',
+    primaryOccasion: 'condolencias',
+    occasions: ['condolencias'],
+    shortDescription: 'Ideal para ceremonias solemnes y homenajes laborales',
+    description: 'Hermoso arreglo floral de la categoría coronas. Ideal para ceremonias solemnes y homenajes laborales. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/corona_6.jpg',
+    badges: [],
+    isCondolence: true,
+    features: [
+      "Mantener en un lugar fresco y ventilado. Rociar suavemente con agua cada 12 horas para conservar la frescura",
+      "Disponibles para entrega en el día. Coordinamos horarios especiales para ceremonias y servicios fúnebres",
+      "Encargos y disponibilidad"
+    ]
+  },
+  {
+    slug: 'corona-elegante-blanca',
+    name: 'Corona Elegante Blanca',
+    primaryOccasion: 'condolencias',
+    occasions: ['condolencias'],
+    shortDescription: 'Perfecta para ceremonias religiosas y homenajes solemnes',
+    description: 'Hermoso arreglo floral de la categoría coronas. Perfecta para ceremonias religiosas y homenajes solemnes. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/corona_7.jpg',
+    badges: [],
+    isCondolence: true,
+    features: [
+      "Mantener en un lugar fresco y ventilado. Rociar suavemente con agua cada 12 horas para conservar la frescura",
+      "Disponibles para entrega en el día. Coordinamos horarios especiales para ceremonias y servicios fúnebres",
+      "Encargos y disponibilidad"
+    ]
+  },
+  {
+    slug: 'corona-roja-y-amarilla',
+    name: 'Corona Roja y Amarilla',
+    primaryOccasion: 'condolencias',
+    occasions: ['condolencias'],
+    shortDescription: 'Destinada a ceremonias especiales y homenajes distinguidos',
+    description: 'Hermoso arreglo floral de la categoría coronas. Destinada a ceremonias especiales y homenajes distinguidos. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/corona_8.jpg',
+    badges: [],
+    isCondolence: true,
+    features: [
+      "Mantener en un lugar fresco y ventilado. Rociar suavemente con agua cada 12 horas para conservar la frescura",
+      "Disponibles para entrega en el día. Coordinamos horarios especiales para ceremonias y servicios fúnebres",
+      "Encargos y disponibilidad"
+    ]
+  },
+  {
+    slug: 'corazon-rosa-y-morado',
+    name: 'Corazón Rosa y Morado',
+    primaryOccasion: 'condolencias',
+    occasions: ['condolencias'],
+    shortDescription: 'Para despedidas emotivas y muestras de amor eterno',
+    description: 'Hermoso arreglo floral de la categoría corazones. Para despedidas emotivas y muestras de amor eterno. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/corazon_1.jpg',
+    badges: ['mas-vendido'],
+    isCondolence: true,
+    features: [
+      "Mantener en un lugar fresco y ventilado. Rociar suavemente con agua cada 12 horas para conservar la frescura",
+      "Disponibles para entrega en el día. Coordinamos horarios especiales para ceremonias y servicios fúnebres",
+      "Encargos y disponibilidad"
+    ]
+  },
+  {
+    slug: 'corazon-blanco-y-morado',
+    name: 'Corazón Blanco y Morado',
+    primaryOccasion: 'condolencias',
+    occasions: ['condolencias'],
+    shortDescription: 'Ideal para condolencias y homenajes religiosos',
+    description: 'Hermoso arreglo floral de la categoría corazones. Ideal para condolencias y homenajes religiosos. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/corazon_2.jpg',
+    badges: [],
+    isCondolence: true,
+    features: [
+      "Mantener en un lugar fresco y ventilado. Rociar suavemente con agua cada 12 horas para conservar la frescura",
+      "Disponibles para entrega en el día. Coordinamos horarios especiales para ceremonias y servicios fúnebres",
+      "Encargos y disponibilidad"
+    ]
+  },
+  {
+    slug: 'corazon-rojo',
+    name: 'Corazón Rojo',
+    primaryOccasion: 'condolencias',
+    occasions: ['condolencias'],
+    shortDescription: 'Expresión solemne para despedidas familiares y homenajes',
+    description: 'Hermoso arreglo floral de la categoría corazones. Expresión solemne para despedidas familiares y homenajes. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/corazon_3.jpg',
+    badges: [],
+    isCondolence: true,
+    features: [
+      "Mantener en un lugar fresco y ventilado. Rociar suavemente con agua cada 12 horas para conservar la frescura",
+      "Disponibles para entrega en el día. Coordinamos horarios especiales para ceremonias y servicios fúnebres",
+      "Encargos y disponibilidad"
+    ]
+  },
+  {
+    slug: 'corazon-multicolor',
+    name: 'Corazón Multicolor',
+    primaryOccasion: 'condolencias',
+    occasions: ['condolencias'],
+    shortDescription: 'Perfecto para ceremonias religiosas y recordatorios puros',
+    description: 'Hermoso arreglo floral de la categoría corazones. Perfecto para ceremonias religiosas y recordatorios puros. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/corazon__4.png',
+    badges: [],
+    isCondolence: true,
+    features: [
+      "Mantener en un lugar fresco y ventilado. Rociar suavemente con agua cada 12 horas para conservar la frescura",
+      "Disponibles para entrega en el día. Coordinamos horarios especiales para ceremonias y servicios fúnebres",
+      "Encargos y disponibilidad"
+    ]
+  },
+  {
+    slug: 'cruz-serenidad-azul',
+    name: 'Cruz Serenidad Azul',
+    primaryOccasion: 'condolencias',
+    occasions: ['condolencias'],
+    shortDescription: 'Para ceremonias religiosas y homenajes espirituales',
+    description: 'Hermoso arreglo floral de la categoría cruces. Para ceremonias religiosas y homenajes espirituales. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/cruz__1.png',
+    badges: [],
+    isCondolence: true,
+    features: [
+      "Conservar en ambiente fresco; mantener hidratadas las flores cada 12 horas",
+      "Se entregan en el día, con posibilidad de ajustar horarios de servicio religioso",
+      "Encargos y disponibilidad"
+    ]
+  },
+  {
+    slug: 'cruz-esperanza-blanca',
+    name: 'Cruz Esperanza Blanca',
+    primaryOccasion: 'condolencias',
+    occasions: ['condolencias'],
+    shortDescription: 'Ideal para velatorios y homenajes de fe',
+    description: 'Hermoso arreglo floral de la categoría cruces. Ideal para velatorios y homenajes de fe. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/cruz__2.png',
+    badges: [],
+    isCondolence: true,
+    features: [
+      "Conservar en ambiente fresco; mantener hidratadas las flores cada 12 horas",
+      "Se entregan en el día, con posibilidad de ajustar horarios de servicio religioso",
+      "Encargos y disponibilidad"
+    ]
+  },
+  {
+    slug: 'cruz-homenaje-postumo',
+    name: 'Cruz Homenaje Póstumo',
+    primaryOccasion: 'condolencias',
+    occasions: ['condolencias'],
+    shortDescription: 'Perfecta para despedidas solemnes y ceremonias religiosas',
+    description: 'Hermoso arreglo floral de la categoría cruces. Perfecta para despedidas solemnes y ceremonias religiosas. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/cruz__3.png',
+    badges: [],
+    isCondolence: true,
+    features: [
+      "Conservar en ambiente fresco; mantener hidratadas las flores cada 12 horas",
+      "Se entregan en el día, con posibilidad de ajustar horarios de servicio religioso",
+      "Encargos y disponibilidad"
+    ]
+  },
+  {
+    slug: 'cruz-luz-eterna',
+    name: 'Cruz Luz Eterna',
+    primaryOccasion: 'condolencias',
+    occasions: ['condolencias'],
+    shortDescription: 'Recomendada para velatorios y ceremonias nocturnas',
+    description: 'Hermoso arreglo floral de la categoría cruces. Recomendada para velatorios y ceremonias nocturnas. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/cruz__4.png',
+    badges: [],
+    isCondolence: true,
+    features: [
+      "Conservar en ambiente fresco; mantener hidratadas las flores cada 12 horas",
+      "Se entregan en el día, con posibilidad de ajustar horarios de servicio religioso",
+      "Encargos y disponibilidad"
+    ]
+  },
+  {
+    slug: 'ramo-peluche-ternura',
+    name: 'Ramo Peluche Ternura',
     primaryOccasion: 'regalos',
-    occasions: ['regalos', 'celebraciones', 'cumpleanos', 'dia-de-la-madre'],
-    shortDescription:
-      'Tonos cálidos de temporada para un regalo especial.',
-    description:
-      'Una mezcla cálida con rosas durazno, ranunculus y follaje otoñal. Ideal para regalar en cualquier momento del año, transmite calidez y agradecimiento.',
-    image: '/products/ramo-otono.jpg',
-    badges: ['nuevo', 'temporada'],
+    occasions: ['regalos'],
+    shortDescription: 'Un regalo lleno de cariño para sorprender, celebrar y acompañar esos momentos que merecen una sonrisa',
+    description: 'Hermoso arreglo floral de la categoría ramos. Un regalo lleno de cariño para sorprender, celebrar y acompañar esos momentos que merecen una sonrisa. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/ramo__1.png',
+    badges: [],
+    
     features: [
-      'Mezcla cálida de temporada',
-      'Rosas durazno y ranunculus',
-      'Follaje otoñal seleccionado',
-      'Regalo ideal para agradecer',
-    ],
+      "Cambiá el agua cada 2 días y cortá los tallos en diagonal para mantener las flores frescas por más tiempo",
+      "Envíos rápidos con la opción de agregar un mensaje personalizado",
+      "Encargos y disponibilidad"
+    ]
   },
+  {
+    slug: 'ramo-pasion-viva',
+    name: 'Ramo Pasión Viva',
+    primaryOccasion: 'celebraciones',
+    occasions: ['celebraciones'],
+    shortDescription: 'Colores vibrantes para felicitaciones y celebraciones',
+    description: 'Hermoso arreglo floral de la categoría ramos. Colores vibrantes para felicitaciones y celebraciones. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/ramo__2.png',
+    badges: ['mas-vendido'],
+    
+    features: [
+      "Cambiar agua del florero cada 2 días; cortar los tallos en diagonal",
+      "Entregas rápidas, con posibilidad de incluir tarjeta personalizada",
+      "Encargos y disponibilidad"
+    ]
+  },
+  {
+    slug: 'ramo-brillo-calido',
+    name: 'Ramo Brillo Cálido',
+    primaryOccasion: 'aniversario',
+    occasions: ['aniversario'],
+    shortDescription: 'Ideal para aniversarios y agradecimientos',
+    description: 'Hermoso arreglo floral de la categoría ramos. Ideal para aniversarios y agradecimientos. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/ramo__3.png',
+    badges: [],
+    
+    features: [
+      "Cambiar agua del florero cada 2 días; cortar los tallos en diagonal",
+      "Entregas rápidas, con posibilidad de incluir tarjeta personalizada",
+      "Encargos y disponibilidad"
+    ]
+  },
+  {
+    slug: 'ramo-dulce-suspiro',
+    name: 'Ramo Dulce Suspiro',
+    primaryOccasion: 'nacimiento',
+    occasions: ['nacimiento'],
+    shortDescription: 'Perfecto para bienvenidas y gestos de cariño',
+    description: 'Hermoso arreglo floral de la categoría ramos. Perfecto para bienvenidas y gestos de cariño. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/ramo__4.png',
+    badges: ['ideal-regalo'],
+    
+    features: [
+      "Cambiar agua del florero cada 2 días; cortar los tallos en diagonal",
+      "Entregas rápidas, con posibilidad de incluir tarjeta personalizada",
+      "Encargos y disponibilidad"
+    ]
+  },
+  {
+    slug: 'ramo-clasico-rojo',
+    name: 'Ramo Clásico Rojo',
+    primaryOccasion: 'amor',
+    occasions: ['amor', 'cumpleanos'],
+    shortDescription: 'El regalo ideal para cumpleaños o amor romántico',
+    description: 'Hermoso arreglo floral de la categoría ramos. El regalo ideal para cumpleaños o amor romántico. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/ramo__5.png',
+    badges: ['nuevo'],
+    
+    features: [
+      "Cambiar agua del florero cada 2 días; cortar los tallos en diagonal",
+      "Entregas rápidas, con posibilidad de incluir tarjeta personalizada",
+      "Encargos y disponibilidad"
+    ]
+  },
+  {
+    slug: 'ramo-rosa-puro',
+    name: 'Ramo Rosa Puro',
+    primaryOccasion: 'regalos',
+    occasions: ['regalos'],
+    shortDescription: 'Pensado para consentencias y mensajes de paz',
+    description: 'Hermoso arreglo floral de la categoría ramos. Pensado para consentencias y mensajes de paz. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/ramo__6.png',
+    badges: ['ideal-regalo'],
+    
+    features: [
+      "Cambiar agua del florero cada 2 días; cortar los tallos en diagonal",
+      "Entregas rápidas, con posibilidad de incluir tarjeta personalizada",
+      "Encargos y disponibilidad"
+    ]
+  },
+  {
+    slug: 'ramo-primavera-radiante',
+    name: 'Ramo Primavera Radiante',
+    primaryOccasion: 'celebraciones',
+    occasions: ['celebraciones'],
+    shortDescription: 'Alegre combinación para eventos especiales y celebraciones',
+    description: 'Hermoso arreglo floral de la categoría ramos. Alegre combinación para eventos especiales y celebraciones. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/ramo__7.png',
+    badges: [],
+    
+    features: [
+      "Cambiar agua del florero cada 2 días; cortar los tallos en diagonal",
+      "Entregas rápidas, con posibilidad de incluir tarjeta personalizada",
+      "Encargos y disponibilidad"
+    ]
+  },
+  {
+    slug: 'ramo-corazon-vivo',
+    name: 'Ramo Corazón Vivo',
+    primaryOccasion: 'amor',
+    occasions: ['amor'],
+    shortDescription: 'Expresión intensa de amor para sorpresas y ocasiones románticas',
+    description: 'Hermoso arreglo floral de la categoría ramos. Expresión intensa de amor para sorpresas y ocasiones románticas. Diseñado con flores frescas de la mejor calidad para acompañar tus momentos más importantes.',
+    image: '/products/ramo_8.jpg',
+    badges: [],
+    
+    features: [
+      "Cambiar agua del florero cada 2 días; cortar los tallos en diagonal",
+      "Entregas rápidas, con posibilidad de incluir tarjeta personalizada",
+      "Encargos y disponibilidad"
+    ]
+  }
 ]

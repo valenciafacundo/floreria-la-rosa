@@ -117,11 +117,11 @@ export function SelectedProductsFloat() {
                       onClick={() => setOpen(false)}
                       className="flex items-start gap-3 p-3 pr-24"
                     >
-                      <div className="h-24 w-24 shrink-0 overflow-hidden rounded-2xl bg-secondary">
+                      <div className="h-24 w-24 shrink-0 overflow-hidden rounded-2xl bg-white p-2">
                         <img
                           src={product.image}
                           alt={product.name}
-                          className="h-full w-full object-cover"
+                          className="h-full w-full object-contain"
                         />
                       </div>
 

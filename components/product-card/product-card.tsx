@@ -19,7 +19,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
       <Link
         href={`/productos/${product.slug}`}
         onClick={() => addSelectedProduct(product)}
-        className="relative block aspect-square overflow-hidden bg-secondary"
+        className="relative block aspect-[4/4.5] overflow-hidden bg-white p-3 sm:p-4"
         aria-label={`Ver detalle de ${product.name}`}
       >
         <Image
@@ -28,7 +28,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
           fill
           priority={priority}
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="object-contain transition-transform duration-500 group-hover:scale-105"
         />
         {product.badges.length > 0 && (
           <div className="absolute left-2 top-2 flex flex-wrap gap-1.5 sm:left-3 sm:top-3">
