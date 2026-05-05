@@ -5,8 +5,8 @@ import { type Product } from "@/data/products";
 
 interface FeaturedSectionProps {
   id?: string;
-  eyebrow: string;
-  title: string;
+  eyebrow?: string;
+  title?: string;
   description?: string;
   products: Product[];
   ctaHref?: string;
@@ -36,10 +36,12 @@ export function FeaturedSection({
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <div className="flex flex-col items-start justify-between gap-5 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.2em] text-primary">
-              {eyebrow}
-            </p>
-            {/* <h2 className="mt-3 text-balance font-serif text-3xl leading-tight md:text-4xl">
+            {eyebrow && (
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary md:text-base">
+                {eyebrow}
+              </p>
+            )}
+            {/* <h2 className="mt-2 text-balance font-serif text-3xl leading-tight md:text-4xl">
               {title}
             </h2> */}
             {description && (
