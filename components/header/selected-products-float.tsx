@@ -92,9 +92,6 @@ export function SelectedProductsFloat() {
                 <p className="text-xs uppercase tracking-[0.2em] text-primary">
                   Tu selección
                 </p>
-                <h2 className="mt-1 font-serif text-2xl text-foreground">
-                  Tus elegidos
-                </h2>
               </div>
               <button
                 type="button"
