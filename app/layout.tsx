@@ -45,7 +45,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={`bg-background ${plusJakartaSans.variable}`}>
+    <html
+      lang="es"
+      className={`bg-background ${plusJakartaSans.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <ThemeScript />
       </head>

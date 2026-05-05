@@ -9,7 +9,16 @@ const MAX_ITEMS = 12
 
 type SelectedProduct = Pick<
   Product,
-  'slug' | 'name' | 'occasions' | 'shortDescription' | 'description' | 'image' | 'badges' | 'isCondolence'
+  | 'slug'
+  | 'name'
+  | 'primaryOccasion'
+  | 'occasions'
+  | 'shortDescription'
+  | 'description'
+  | 'image'
+  | 'badges'
+  | 'isCondolence'
+  | 'features'
 > & {
   occasionLabel: string
 }

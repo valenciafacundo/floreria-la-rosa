@@ -41,9 +41,9 @@ export function FeaturedSection({
                 {eyebrow}
               </p>
             )}
-            {/* <h2 className="mt-2 text-balance font-serif text-3xl leading-tight md:text-4xl">
+            <h2 className="mt-2 text-balance font-serif text-3xl leading-tight md:text-4xl">
               {title}
-            </h2> */}
+            </h2>
             {description && (
               <p className="mt-3 text-pretty text-muted-foreground">
                 {description}

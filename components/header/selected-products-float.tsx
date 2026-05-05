@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import type { Product } from "@/data/products";
 import { Clock3, X } from "lucide-react";
 import {
   getSelectedProducts,
@@ -13,12 +14,15 @@ import { cn } from "@/lib/utils";
 export function SelectedProductsFloat() {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const [selectedProducts, setSelectedProducts] = useState(
-    getSelectedProducts(),
+  type SelectedProduct = Product & { occasionLabel: string };
+
+  const [selectedProducts, setSelectedProducts] = useState<SelectedProduct[]>(
+    [],
   );
 
   useEffect(() => {
-    const sync = () => setSelectedProducts(getSelectedProducts());
+    const sync = () =>
+      setSelectedProducts(getSelectedProducts() as SelectedProduct[]);
     sync();
     return subscribeToSelectedProducts(sync);
   }, []);

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SiteHeader } from "@/components/header/site-header";
 import { SiteFooter } from "@/components/header/site-footer";
 
+import { FloatingButtons } from "@/components/header/floating-buttons";
 import { SelectedProductsFloat } from "@/components/header/selected-products-float";
 import { CatalogBrowser } from "@/components/product-grid/catalog-browser";
 
@@ -40,7 +41,7 @@ export default function CatalogoPage() {
       </main>
       <SiteFooter />
       <SelectedProductsFloat />
-      {/* <WhatsAppFloat /> */}
+      <FloatingButtons />
     </>
   );
 }

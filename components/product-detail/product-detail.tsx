@@ -34,7 +34,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
               >
                 <ol className="flex flex-wrap items-center gap-1">
                   <li>
-                    <Link href="/" className="hover:text-primary">
+                    <Link href="/" className="hover:text-primary text-[12px]">
                       Inicio
                     </Link>
                   </li>
@@ -42,14 +42,19 @@ export function ProductDetail({ product }: ProductDetailProps) {
                     &gt;
                   </li>
                   <li>
-                    <Link href="/#catalogo" className="hover:text-primary">
+                    <Link
+                      href="/#catalogo"
+                      className="hover:text-primary text-[12px]"
+                    >
                       Catálogo
                     </Link>
                   </li>
                   <li aria-hidden="true" className="mx-0.5">
                     &gt;
                   </li>
-                  <li className="text-primary/80">{product.name}</li>
+                  <li className="text-primary/80 text-[12px]">
+                    {product.name}
+                  </li>
                 </ol>
               </nav>
 
@@ -68,7 +73,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
                 ))}
               </div>
 
-              <p className="text-pretty leading-relaxed text-muted-foreground md:text-lg">
+              <p className="text-pretty leading-relaxed text-muted-foreground md:text-lg mt-4">
                 {product.description}
               </p>
 

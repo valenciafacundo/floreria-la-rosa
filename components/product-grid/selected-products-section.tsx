@@ -8,9 +8,7 @@ import {
 import { FeaturedSection } from "@/components/product-grid/featured-section";
 
 export function SelectedProductsSection() {
-  const [selectedProducts, setSelectedProducts] = useState(
-    getSelectedProducts(),
-  );
+  const [selectedProducts, setSelectedProducts] = useState<any[]>([]);
 
   useEffect(() => {
     const sync = () => setSelectedProducts(getSelectedProducts());
