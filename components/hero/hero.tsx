@@ -35,7 +35,7 @@ export function Hero() {
         <div className="flex flex-col gap-5">
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs uppercase tracking-[0.18em] text-muted-foreground">
             <Sparkles className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
-            Florería artesanal · más de 20 años
+            Florería en Salta Capital · más de 20 años
           </span>
 
           <h1 className="text-balance font-serif text-4xl leading-[1.02] tracking-tight md:text-5xl lg:text-6xl">
@@ -125,7 +125,7 @@ export function Hero() {
           <div className="absolute -bottom-6 -left-6 max-w-[200px] rounded-2xl border border-border bg-card p-4 shadow-lg">
             <p className="font-serif text-2xl text-primary">+5.000</p>
             <p className="text-xs leading-snug text-muted-foreground">
-              ramos entregados a clientes felices en toda la ciudad.
+              ramos entregados a clientes felices en Salta Capital.
             </p>
           </div>
           <div className="absolute -right-6 top-10 max-w-[200px] rounded-2xl border border-border bg-card p-4 shadow-lg">

@@ -47,11 +47,25 @@ export function ReviewsSection() {
                 "{review.comment}"
               </p>
               <div className="mt-auto flex items-center justify-between border-t border-border/60 pt-4">
-                <div>
-                  <p className="text-sm font-medium">{review.name}</p>
-                  {review.date && (
-                    <p className="text-xs text-muted-foreground">{review.date}</p>
+                <div className="flex items-center gap-3">
+                  {review.avatar ? (
+                    <img
+                      src={review.avatar}
+                      alt={`Avatar de ${review.name}`}
+                      className="h-10 w-10 rounded-full object-cover shadow-sm"
+                      referrerPolicy="no-referrer"
+                    />
+                  ) : (
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 font-medium text-primary">
+                      {review.name.charAt(0)}
+                    </div>
                   )}
+                  <div>
+                    <p className="text-sm font-medium leading-none">{review.name}</p>
+                    {review.date && (
+                      <p className="mt-1 text-xs text-muted-foreground">{review.date}</p>
+                    )}
+                  </div>
                 </div>
                 <span className="rounded-full bg-secondary px-3 py-1 text-xs font-medium">
                   {review.source}
@@ -59,6 +73,17 @@ export function ReviewsSection() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <a
+            href="https://g.co/kgs/tih1bRQ"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card px-8 py-3.5 text-sm font-medium text-foreground shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary hover:shadow-md"
+          >
+            Dejar una reseña en Google
+          </a>
         </div>
       </div>
     </section>

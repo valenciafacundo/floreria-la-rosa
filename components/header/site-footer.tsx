@@ -9,7 +9,7 @@ import {
 export function SiteFooter() {
   return (
     <footer className="border-t border-border/60 bg-secondary/40">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 md:grid-cols-4 md:px-8 md:py-16">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 md:grid-cols-5 md:px-8 md:py-16">
         <div className="md:col-span-2">
           <Link href="/" className="inline-flex items-center gap-2">
             <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
@@ -91,6 +91,16 @@ export function SiteFooter() {
               />
               <span>Envíos sin cargo en zona centro.</span>
             </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="font-serif text-lg">Medios de pago</h3>
+          <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
+            <li className="flex items-center gap-2">Tarjetas de crédito/débito</li>
+            <li className="flex items-center gap-2">Transferencias bancarias</li>
+            <li className="flex items-center gap-2">Efectivo</li>
+            <li className="flex items-center gap-2">Paypal (internacional)</li>
           </ul>
         </div>
       </div>
