@@ -107,7 +107,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
 
             <div className="mt-4 flex flex-col gap-3">
               <a
-                href={whatsappForProduct(product.name)}
+                href={whatsappForProduct(product.name, product.slug)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:scale-[1.01] hover:bg-primary/90 md:text-lg"

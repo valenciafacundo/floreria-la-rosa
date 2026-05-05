@@ -1,5 +1,9 @@
-import { MessageCircle, Phone, MapPin } from 'lucide-react'
-import { generalWhatsAppUrl, PHONE_HREF, PHONE_NUMBER } from '@/helpers/whatsapp'
+import { MessageCircle, Phone, MapPin } from "lucide-react";
+import {
+  generalWhatsAppUrl,
+  PHONE_HREF,
+  PHONE_NUMBER,
+} from "@/helpers/whatsapp";
 
 export function ContactSection() {
   return (
@@ -11,9 +15,10 @@ export function ContactSection() {
               Hablemos sobre tu próximo ramo
             </h2>
             <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
-              Te asesoramos sin compromiso. Consultanos por colores, tamaños, opciones
-              según la ocasión y disponibilidad. Estamos para acompañarte en cada
-              momento, desde una celebración hasta un instante delicado.
+              Te asesoramos sin compromiso. Consultanos por colores, tamaños,
+              opciones según la ocasión y disponibilidad. Estamos para
+              acompañarte en cada momento, desde una celebración hasta un
+              instante delicado.
             </p>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -70,7 +75,7 @@ export function ContactSection() {
                   href={PHONE_HREF}
                   className="mt-2 inline-block text-sm font-medium text-primary hover:underline"
                 >
-                  {PHONE_NUMBER}
+                  {PHONE_NUMBER} →
                 </a>
               </div>
             </div>
@@ -90,5 +95,5 @@ export function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

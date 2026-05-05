@@ -63,7 +63,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
 
         <div className="mt-auto flex flex-col gap-2 pt-2 sm:flex-row sm:gap-2">
           <a
-            href={whatsappForProduct(product.name)}
+            href={whatsappForProduct(product.name, product.slug)}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-primary px-3 py-2 text-[11px] font-medium text-primary-foreground transition-all hover:bg-primary/90 sm:px-4 sm:py-2.5 sm:text-xs"

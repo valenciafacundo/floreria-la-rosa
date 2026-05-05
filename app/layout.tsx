@@ -17,6 +17,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://floreria-la-rosa.netlify.app'),
   title: 'Florería La Rosa — Ramos y arreglos florales artesanales',
   description: 'Florería La Rosa: arreglos artesanales para todas las ocasiones. Entregas coordinadas, flores de temporada y atención personalizada las 24 horas por WhatsApp.',
   generator: 'v0.app',

@@ -7,6 +7,7 @@ import { ProductDetail } from '@/components/product-detail/product-detail'
 import { TrackSelectedProduct } from '@/components/product-detail/track-selected-product'
 import { products } from '@/data/products'
 import { getProductBySlug } from '@/helpers/products'
+import { productUrl, SITE_URL } from '@/helpers/whatsapp'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -26,13 +27,34 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
   }
 
+  const absoluteUrl = productUrl(product.slug)
+  const absoluteImage = `${SITE_URL}${product.image}`
+
   return {
     title: `${product.name} | Florería La Rosa`,
     description: product.shortDescription,
+    alternates: {
+      canonical: absoluteUrl,
+    },
     openGraph: {
-      title: product.name,
+      title: `${product.name} | Florería La Rosa`,
       description: product.shortDescription,
-      images: [{ url: product.image }],
+      url: absoluteUrl,
+      siteName: 'Florería La Rosa',
+      locale: 'es_AR',
+      type: 'website',
+      images: [
+        {
+          url: absoluteImage,
+          alt: product.name,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${product.name} | Florería La Rosa`,
+      description: product.shortDescription,
+      images: [absoluteImage],
     },
   }
 }

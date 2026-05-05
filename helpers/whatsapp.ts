@@ -1,16 +1,22 @@
-// Reemplazá este número por el real de la florería (formato internacional sin +).
+export const SITE_URL = 'https://floreria-la-rosa.netlify.app'
 export const WHATSAPP_NUMBER = '5493875312819'
 export const PHONE_NUMBER = '(387) 5312819'
-export const PHONE_HREF = 'tel:3874229189'
+export const PHONE_HREF = 'tel:+543875312819'
 
 export function buildWhatsAppUrl(message: string): string {
   const encoded = encodeURIComponent(message)
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`
 }
 
-export function whatsappForProduct(productName: string): string {
+export function productUrl(slug: string): string {
+  return `${SITE_URL}/productos/${slug}`
+}
+
+export function whatsappForProduct(productName: string, slug?: string): string {
+  const productLink = slug ? `\n${productUrl(slug)}` : ''
+
   return buildWhatsAppUrl(
-    `Hola, quisiera consultar disponibilidad por ${productName}.`,
+    `Hola! Me interesa este producto: ${productName}. ¿Podrían pasarme disponibilidad y precio actualizado? Gracias!${productLink}`,
   )
 }
 
