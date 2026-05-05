@@ -50,10 +50,10 @@ export function SelectedProductsFloat() {
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Abrir tus elegidos"
-        className="fixed bottom-5 left-5 z-40 inline-flex items-center gap-2 rounded-full bg-card px-5 py-3.5 text-sm font-medium text-foreground shadow-lg ring-1 ring-border transition-all duration-300 hover:scale-[1.04] hover:shadow-xl md:bottom-7 md:left-7"
+        className="fixed bottom-5 left-5 z-40 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-5 py-3.5 text-sm font-medium text-foreground shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-[1.04] hover:bg-primary/10 hover:shadow-xl md:bottom-7 md:left-7"
       >
         <Clock3 className="h-5 w-5 text-primary" aria-hidden="true" />
-        <span className="hidden md:inline">Tus elegidos</span>
+        <span className="hidden md:inline">Tus elegidos 😍 </span>
       </button>
 
       {mounted && (
