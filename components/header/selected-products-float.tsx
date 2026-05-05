@@ -28,6 +28,16 @@ export function SelectedProductsFloat() {
   }, []);
 
   useEffect(() => {
+    if (selectedProducts.length === 0) {
+      // Si no quedan productos, cerramos panel y aseguramos que el body
+      // no conserve overflow:hidden (evita pantalla "congelada").
+      setOpen(false);
+      setMounted(false);
+      if (typeof document !== "undefined") document.body.style.overflow = "";
+    }
+  }, [selectedProducts]);
+
+  useEffect(() => {
     if (open) {
       setMounted(true);
       const previous = document.body.style.overflow;
