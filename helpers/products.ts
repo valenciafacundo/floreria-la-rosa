@@ -5,6 +5,7 @@ import {
   type Product,
   type ProductOccasion,
 } from '@/data/products'
+import { featured, type FeaturedSection } from '@/data/featured'
 
 export function getProductBySlug(slug: string): Product | undefined {
   return products.find((p) => p.slug === slug)
@@ -80,4 +81,15 @@ export function getProductsByOccasion(
   limit = 4,
 ): Product[] {
   return products.filter((product) => product.occasions.includes(occasion)).slice(0, limit)
+}
+
+export function getProductsBySection(section: FeaturedSection, limit = 4): Product[] {
+  const slugs = featured[section] ?? []
+  const items: Product[] = []
+  for (const slug of slugs) {
+    const p = products.find((pr) => pr.slug === slug)
+    if (p) items.push(p)
+    if (items.length >= limit) break
+  }
+  return items
 }

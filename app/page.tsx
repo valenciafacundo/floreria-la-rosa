@@ -5,17 +5,17 @@ import { SelectedProductsSection } from "@/components/product-grid/selected-prod
 import { ReviewsSection } from "@/components/reviews/reviews-section";
 import { TrustSection } from "@/components/trust-section/trust-section";
 import { ContactSection } from "@/components/contact-section/contact-section";
-import { getProductsByOccasion } from "@/helpers/products";
+import { getProductsBySection } from "@/helpers/products";
 import { Hero } from "@/components/hero/hero";
 import { SiteHeader } from "@/components/header/site-header";
 import { SiteFooter } from "@/components/header/site-footer";
 
 export default function HomePage() {
-  const loveProducts = getProductsByOccasion("amor", 4);
-  const birthdayProducts = getProductsByOccasion("cumpleanos", 4);
-  const birthProducts = getProductsByOccasion("nacimiento", 4);
-  const giftProducts = getProductsByOccasion("regalos", 4);
-  const condolenceProducts = getProductsByOccasion("condolencias", 4);
+  const loveProducts = getProductsBySection("amor", 4);
+  const birthdayProducts = getProductsBySection("cumpleanos", 4);
+  const birthProducts = getProductsBySection("nacimiento", 4);
+  const giftProducts = getProductsBySection("regalos", 4);
+  const condolenceProducts = getProductsBySection("condolencias", 4);
 
   return (
     <>
