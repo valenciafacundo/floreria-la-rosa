@@ -23,7 +23,7 @@ export default function CatalogoPage() {
               Catálogo
             </p>
             <h1 className="mt-3 max-w-2xl text-balance font-serif text-4xl leading-tight md:text-5xl">
-              Encontrá el ramo perfecto para tu ocasión
+              Encontrá el presente ideal para tu ocasión
             </h1>
             <p className="mt-4 max-w-2xl text-pretty text-muted-foreground">
               Filtrá por ocasión, buscá por nombre o intención y consultá

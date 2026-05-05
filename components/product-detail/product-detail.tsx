@@ -43,7 +43,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
                   </li>
                   <li>
                     <Link
-                      href="/#catalogo"
+                      href="/catalogo"
                       className="hover:text-primary text-[12px]"
                     >
                       Catálogo
@@ -134,7 +134,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
                 </h2>
               </div>
               <Link
-                href="/#catalogo"
+                href="/catalogo"
                 className="text-sm text-primary hover:underline"
               >
                 Ver todo el catálogo →
