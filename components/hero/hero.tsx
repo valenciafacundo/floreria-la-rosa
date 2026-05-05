@@ -18,7 +18,7 @@ const benefits = [
   },
   {
     icon: Clock3,
-    title: "Entrega en 24hs",
+    title: "Trabajamos 24hs",
     description: "Todos los días",
   },
   {
