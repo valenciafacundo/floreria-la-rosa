@@ -26,6 +26,7 @@ export interface Product {
   image: string
   badges: ProductBadge[]
   isCondolence?: boolean
+  features?: string[]
 }
 
 export const occasions: { value: ProductOccasion | 'todos'; label: string }[] = [
@@ -61,6 +62,12 @@ export const products: Product[] = [
       'Un ramo eterno que habla por sí solo. Doce rosas rojas frescas, seleccionadas una por una en nuestra florería, envueltas con papel artesanal y un lazo de seda. Ideal para declaraciones de amor, aniversarios y momentos que merecen quedar grabados.',
     image: '/products/ramo-rosas-rojas.jpg',
     badges: ['mas-vendido', 'ideal-regalo'],
+    features: [
+      'Flores seleccionadas de temporada',
+      'Presentación lista para regalar',
+      'Tarjeta con dedicatoria (opcional)',
+      'Envío con cuidados especiales',
+    ],
   },
   {
     slug: 'bouquet-primavera-pastel',
@@ -73,6 +80,12 @@ export const products: Product[] = [
       'Un bouquet luminoso con peonías, lisianthus y rosas en tonos rosados, durazno y crema. Perfecto para cumpleaños, celebraciones especiales o simplemente para alegrar el día de alguien que querés mucho.',
     image: '/products/bouquet-primavera.jpg',
     badges: ['nuevo', 'temporada'],
+    features: [
+      'Flores frescas de estación',
+      'Combinación de tonos pastel',
+      'Presentación lista para regalar',
+      'Tarjeta con dedicatoria (opcional)',
+    ],
   },
   {
     slug: 'caja-rosas-blancas-eternas',
@@ -84,6 +97,12 @@ export const products: Product[] = [
       'Elegancia pura. Una caja artesanal con rosas blancas frescas, perfectas para aniversarios, propuestas y momentos elegantes. Cada rosa es seleccionada por su forma y frescura.',
     image: '/products/caja-rosas-blancas.jpg',
     badges: ['mas-vendido'],
+    features: [
+      'Rosas blancas premium',
+      'Caja artesanal de lujo',
+      'Presentación lista para regalar',
+      'Tarjeta con dedicatoria (opcional)',
+    ],
   },
   {
     slug: 'ramo-girasoles-campo',
@@ -95,6 +114,12 @@ export const products: Product[] = [
       'Girasoles seleccionados acompañados de follaje verde fresco. Un ramo que regala sonrisas y transmite la calidez del sol en cada flor. Ideal para cumpleaños y momentos felices.',
     image: '/products/ramo-girasoles.jpg',
     badges: ['ideal-regalo', 'temporada'],
+    features: [
+      'Girasoles seleccionados',
+      'Follaje verde fresco',
+      'Presentación artesanal',
+      'Tarjeta con dedicatoria (opcional)',
+    ],
   },
   {
     slug: 'arreglo-bebe-nina',
@@ -107,6 +132,12 @@ export const products: Product[] = [
       'Un arreglo dulce y delicado en tonos rosa pálido y blanco, pensado para dar la bienvenida a una nueva vida. Incluye rosas, gypsophila y un toque artesanal único.',
     image: '/products/arreglo-bebe-nina.jpg',
     badges: ['ideal-regalo'],
+    features: [
+      'Flores en tonos rosados',
+      'Arreglo dulce y delicado',
+      'Ideal para nacimientos',
+      'Tarjeta con dedicatoria incluida',
+    ],
   },
   {
     slug: 'arreglo-bebe-nino',
@@ -119,6 +150,12 @@ export const products: Product[] = [
       'Arreglo en tonos celestes y blancos con rosas, lisianthus y follaje fresco. Una manera cálida y artesanal de saludar a la nueva familia.',
     image: '/products/arreglo-bebe-nino.jpg',
     badges: ['ideal-regalo'],
+    features: [
+      'Flores en tonos celestes',
+      'Arreglo artesanal premium',
+      'Ideal para recién nacidos',
+      'Tarjeta con dedicatoria incluida',
+    ],
   },
   {
     slug: 'ramo-tulipanes-mixtos',
@@ -131,6 +168,12 @@ export const products: Product[] = [
       'Tulipanes holandeses frescos en una mezcla cuidadosamente elegida de colores que transmiten elegancia y modernidad. Una opción versátil para cualquier celebración.',
     image: '/products/ramo-tulipanes.jpg',
     badges: ['nuevo', 'temporada'],
+    features: [
+      'Tulipanes holandeses frescos',
+      'Variedad de colores vibrantes',
+      'Elegancia y modernidad',
+      'Presentación de lujo',
+    ],
   },
   {
     slug: 'ramo-peonias-rosadas',
@@ -143,6 +186,12 @@ export const products: Product[] = [
       'Peonías frescas en su mejor momento, símbolo de romance y prosperidad. Un ramo voluminoso, suave y profundamente romántico. Disponible solo en temporada.',
     image: '/products/ramo-peonias.jpg',
     badges: ['temporada', 'ideal-regalo'],
+    features: [
+      'Peonías frescas de temporada',
+      'Ramo voluminoso y romántico',
+      'Símbolo de prosperidad',
+      'Disponibilidad limitada',
+    ],
   },
   {
     slug: 'corona-condolencias-blanca',
@@ -194,5 +243,11 @@ export const products: Product[] = [
       'Una mezcla cálida con rosas durazno, ranunculus y follaje otoñal. Ideal para regalar en cualquier momento del año, transmite calidez y agradecimiento.',
     image: '/products/ramo-otono.jpg',
     badges: ['nuevo', 'temporada'],
+    features: [
+      'Mezcla cálida de temporada',
+      'Rosas durazno y ranunculus',
+      'Follaje otoñal seleccionado',
+      'Regalo ideal para agradecer',
+    ],
   },
 ]

@@ -1,5 +1,12 @@
 import Link from "next/link";
-import { MessageCircle, Phone, ArrowLeft, Home, Leaf } from "lucide-react";
+import {
+  MessageCircle,
+  Phone,
+  ArrowLeft,
+  Home,
+  Leaf,
+  Check,
+} from "lucide-react";
 import { type Product, badgeLabels } from "@/data/products";
 import { whatsappForProduct, PHONE_HREF } from "@/helpers/whatsapp";
 import {
@@ -7,9 +14,9 @@ import {
   getPrimaryOccasion,
   getRelatedProducts,
 } from "@/helpers/products";
-import { ExtrasSection } from "@/components/extras-section/extras-section";
 import { ProductGrid } from "@/components/product-grid/product-grid";
 import { ProductImageZoom } from "@/components/product-detail/product-image-zoom";
+import { ProductExtrasInline } from "@/components/product-detail/product-extras-inline";
 
 interface ProductDetailProps {
   product: Product;
@@ -21,99 +28,81 @@ export function ProductDetail({ product }: ProductDetailProps) {
   return (
     <article className="bg-background">
       <div className="mx-auto max-w-7xl px-4 pb-16 pt-8 md:px-8 md:pb-24 md:pt-12">
-        <nav
-          aria-label="Migas de pan"
-          className="mb-6 text-xs text-muted-foreground"
-        >
-          <ol className="flex flex-wrap items-center gap-1">
-            <li>
-              <Link href="/" className="hover:text-primary">
-                Inicio
-              </Link>
-            </li>
-            <li aria-hidden="true">/</li>
-            <li>
-              <Link href="/#catalogo" className="hover:text-primary">
-                Catálogo
-              </Link>
-            </li>
-            <li aria-hidden="true">/</li>
-            <li className="text-foreground">{product.name}</li>
-          </ol>
-        </nav>
-
         <div className="grid gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
-          <ProductImageZoom
-            src={product.image}
-            alt={`${product.name} - ${product.shortDescription}`}
-          />
+          <div className="flex flex-col">
+            <ProductImageZoom
+              src={product.image}
+              alt={`${product.name} - ${product.shortDescription}`}
+            />
+            {!product.isCondolence && <ProductExtrasInline />}
+          </div>
 
-          <div className="flex flex-col gap-5">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="rounded-full bg-secondary px-3 py-1 text-xs uppercase tracking-[0.18em] text-primary">
-                {getOccasionLabel(getPrimaryOccasion(product))}
-              </span>
-              {product.badges.map((badge) => (
-                <span
-                  key={badge}
-                  className="rounded-full border border-border bg-card px-3 py-1 text-[11px] font-medium uppercase tracking-wider"
-                >
-                  {badgeLabels[badge]}
-                </span>
-              ))}
+          <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4">
+              <h1 className="text-balance font-serif text-3xl leading-tight md:text-4xl lg:text-5xl">
+                {product.name}
+              </h1>
+
+              <div className="flex flex-wrap items-center gap-2">
+                {product.badges.map((badge) => (
+                  <span
+                    key={badge}
+                    className="rounded-full bg-primary/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-primary"
+                  >
+                    {badgeLabels[badge]}
+                  </span>
+                ))}
+              </div>
+
+              <p className="text-pretty leading-relaxed text-muted-foreground md:text-lg">
+                {product.description}
+              </p>
+
+              {product.features && (
+                <ul className="mt-2 space-y-3">
+                  {product.features.map((feature, i) => (
+                    <li
+                      key={i}
+                      className="flex items-center gap-3 text-sm text-muted-foreground"
+                    >
+                      <div className="flex h-5 w-5 items-center justify-center rounded-full border border-primary/20 bg-primary/5">
+                        <Check
+                          className="h-3 w-3 text-primary"
+                          strokeWidth={3}
+                        />
+                      </div>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
 
-            <h1 className="text-balance font-serif text-3xl leading-tight md:text-4xl lg:text-5xl">
-              {product.name}
-            </h1>
-
-            <p className="text-pretty leading-relaxed text-muted-foreground md:text-lg">
-              {product.description}
-            </p>
-
-            <div className="flex flex-wrap gap-2 text-xs text-muted-foreground">
-              {product.occasions.map((occasion) => (
-                <span
-                  key={occasion}
-                  className="rounded-full border border-border bg-card px-3 py-1"
-                >
-                  {getOccasionLabel(occasion)}
-                </span>
-              ))}
-            </div>
-
-            <div className="flex items-start gap-3 rounded-2xl border border-border bg-secondary/40 p-4 text-sm leading-relaxed text-muted-foreground">
-              <Leaf
-                className="mt-0.5 h-4 w-4 flex-none text-primary"
-                aria-hidden="true"
-              />
-              <p>
-                {product.isCondolence
-                  ? "Coordinamos la entrega directa al velatorio o domicilio con la sobriedad y respeto que el momento merece."
-                  : "Las imágenes son referenciales. Trabajamos con flores frescas de temporada, por lo que colores y variedades pueden variar según disponibilidad."}
+            <div className="rounded-2xl border border-border bg-secondary/30 p-4 text-sm">
+              <p className="font-semibold text-foreground">Disponibilidad:</p>
+              <p className="mt-1 leading-relaxed text-muted-foreground">
+                Producto sujeto a disponibilidad de flores y accesorios según
+                temporada.
               </p>
             </div>
 
-            <div className="mt-2 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-4 flex flex-col gap-3">
               <a
                 href={whatsappForProduct(product.name)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:scale-[1.02] hover:bg-primary/90"
+                className="inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:scale-[1.01] hover:bg-primary/90 md:text-lg"
               >
-                <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                <MessageCircle className="h-5 w-5" aria-hidden="true" />
                 Consultar disponibilidad
               </a>
-              <a
-                href={PHONE_HREF}
-                className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-border bg-card px-6 py-3.5 text-sm font-medium text-foreground transition-colors hover:border-primary/40 hover:text-primary"
-              >
-                <Phone className="h-4 w-4" aria-hidden="true" />
-                Llamar ahora
-              </a>
+              <p className="text-center text-xs text-muted-foreground">
+                Te respondemos por WhatsApp con precio actualizado y opciones
+                disponibles.
+              </p>
             </div>
 
-            <div className="mt-2 flex flex-wrap gap-2">
+            <div className="mt-4 flex flex-wrap gap-2">
               <Link
                 href="/#catalogo"
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-xs text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
@@ -131,12 +120,6 @@ export function ProductDetail({ product }: ProductDetailProps) {
             </div>
           </div>
         </div>
-
-        {!product.isCondolence && (
-          <div className="mt-16 md:mt-20">
-            <ExtrasSection productName={product.name} />
-          </div>
-        )}
 
         {related.length > 0 && (
           <div className="mt-16 md:mt-24">
