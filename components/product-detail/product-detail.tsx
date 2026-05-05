@@ -1,19 +1,8 @@
 import Link from "next/link";
-import {
-  MessageCircle,
-  Phone,
-  ArrowLeft,
-  Home,
-  Leaf,
-  Check,
-} from "lucide-react";
+import { MessageCircle, Check } from "lucide-react";
 import { type Product, badgeLabels } from "@/data/products";
-import { whatsappForProduct, PHONE_HREF } from "@/helpers/whatsapp";
-import {
-  getOccasionLabel,
-  getPrimaryOccasion,
-  getRelatedProducts,
-} from "@/helpers/products";
+import { whatsappForProduct } from "@/helpers/whatsapp";
+import { getRelatedProducts } from "@/helpers/products";
 import { ProductGrid } from "@/components/product-grid/product-grid";
 import { ProductImageZoom } from "@/components/product-detail/product-image-zoom";
 import { ProductExtrasInline } from "@/components/product-detail/product-extras-inline";
@@ -27,7 +16,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
 
   return (
     <article className="bg-background">
-      <div className="mx-auto max-w-7xl px-4 pb-16 pt-8 md:px-8 md:pb-24 md:pt-12">
+      <div className="mx-auto max-w-7xl px-4 pb-16 pt-4 md:px-8 md:pb-24 md:pt-6">
         <div className="grid gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
           <div className="flex flex-col">
             <ProductImageZoom
@@ -38,8 +27,33 @@ export function ProductDetail({ product }: ProductDetailProps) {
           </div>
 
           <div className="flex flex-col gap-6">
-            <div className="flex flex-col gap-4">
-              <h1 className="text-balance font-serif text-3xl leading-tight md:text-4xl lg:text-5xl">
+            <div className="flex flex-col gap-2">
+              <nav
+                aria-label="Migas de pan"
+                className="mb-1 text-[10px] uppercase tracking-widest text-muted-foreground/60"
+              >
+                <ol className="flex flex-wrap items-center gap-1">
+                  <li>
+                    <Link href="/" className="hover:text-primary">
+                      Inicio
+                    </Link>
+                  </li>
+                  <li aria-hidden="true" className="mx-0.5">
+                    &gt;
+                  </li>
+                  <li>
+                    <Link href="/#catalogo" className="hover:text-primary">
+                      Catálogo
+                    </Link>
+                  </li>
+                  <li aria-hidden="true" className="mx-0.5">
+                    &gt;
+                  </li>
+                  <li className="text-primary/80">{product.name}</li>
+                </ol>
+              </nav>
+
+              <h1 className="text-balance font-serif text-2xl leading-tight md:text-3xl lg:text-4xl">
                 {product.name}
               </h1>
 
@@ -93,30 +107,12 @@ export function ProductDetail({ product }: ProductDetailProps) {
                 rel="noopener noreferrer"
                 className="inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:scale-[1.01] hover:bg-primary/90 md:text-lg"
               >
-                <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                <MessageCircle className="h-4 w-4" aria-hidden="true" />
                 Consultar disponibilidad
               </a>
               <p className="text-center text-xs text-muted-foreground">
-                Te respondemos por WhatsApp con precio actualizado y opciones
-                disponibles.
+                Te respondemos por WhatsApp con precio actualizado y opciones.
               </p>
-            </div>
-
-            <div className="mt-4 flex flex-wrap gap-2">
-              <Link
-                href="/#catalogo"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-xs text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
-              >
-                <ArrowLeft className="h-3.5 w-3.5" aria-hidden="true" />
-                Volver al catálogo
-              </Link>
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-xs text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
-              >
-                <Home className="h-3.5 w-3.5" aria-hidden="true" />
-                Volver al inicio
-              </Link>
             </div>
           </div>
         </div>

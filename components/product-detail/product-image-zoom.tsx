@@ -1,25 +1,25 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import { useRef, useState } from 'react'
+import Image from "next/image";
+import { useRef, useState } from "react";
 
 interface ProductImageZoomProps {
-  src: string
-  alt: string
+  src: string;
+  alt: string;
 }
 
 export function ProductImageZoom({ src, alt }: ProductImageZoomProps) {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const [pos, setPos] = useState({ x: 50, y: 50 })
-  const [zooming, setZooming] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [pos, setPos] = useState({ x: 50, y: 50 });
+  const [zooming, setZooming] = useState(false);
 
   function handleMove(e: React.MouseEvent<HTMLDivElement>) {
-    const el = containerRef.current
-    if (!el) return
-    const rect = el.getBoundingClientRect()
-    const x = ((e.clientX - rect.left) / rect.width) * 100
-    const y = ((e.clientY - rect.top) / rect.height) * 100
-    setPos({ x, y })
+    const el = containerRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    setPos({ x, y });
   }
 
   return (
@@ -28,7 +28,7 @@ export function ProductImageZoom({ src, alt }: ProductImageZoomProps) {
       onMouseEnter={() => setZooming(true)}
       onMouseLeave={() => setZooming(false)}
       onMouseMove={handleMove}
-      className="relative aspect-square w-full overflow-hidden rounded-[2rem] bg-secondary shadow-md"
+      className="relative aspect-[4/3.2] w-full overflow-hidden rounded-[2rem] bg-secondary shadow-md"
     >
       <Image
         src={src}
@@ -40,7 +40,7 @@ export function ProductImageZoom({ src, alt }: ProductImageZoomProps) {
         style={
           zooming
             ? {
-                transform: 'scale(1.6)',
+                transform: "scale(1.6)",
                 transformOrigin: `${pos.x}% ${pos.y}%`,
               }
             : undefined
@@ -50,5 +50,5 @@ export function ProductImageZoom({ src, alt }: ProductImageZoomProps) {
         Pasá el cursor para acercar
       </div>
     </div>
-  )
+  );
 }

@@ -1,21 +1,21 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { useState } from 'react'
-import { Flower2, Menu, X, MessageCircle } from 'lucide-react'
-import { generalWhatsAppUrl } from '@/helpers/whatsapp'
-import { cn } from '@/lib/utils'
-import { ThemeSwitcher } from '@/components/theme-switcher/theme-switcher'
+import Link from "next/link";
+import { useState } from "react";
+import { Flower2, Menu, X, MessageCircle } from "lucide-react";
+import { generalWhatsAppUrl } from "@/helpers/whatsapp";
+import { cn } from "@/lib/utils";
+import { ThemeSwitcher } from "@/components/theme-switcher/theme-switcher";
 
 const navLinks = [
-  { href: '/', label: 'Inicio' },
-  { href: '/#catalogo', label: 'Catálogo' },
-  { href: '/#opiniones', label: 'Opiniones' },
-  { href: '/#contacto', label: 'Contacto' },
-]
+  { href: "/", label: "Inicio" },
+  { href: "/#catalogo", label: "Catálogo" },
+  { href: "/#opiniones", label: "Opiniones" },
+  { href: "/#contacto", label: "Contacto" },
+];
 
 export function SiteHeader() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/85 backdrop-blur-md">
@@ -34,7 +34,10 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Navegación principal">
+        <nav
+          className="hidden items-center gap-8 md:flex"
+          aria-label="Navegación principal"
+        >
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -49,7 +52,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <ThemeSwitcher />
 
-          <a
+          {/* <a
             href={generalWhatsAppUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -57,11 +60,11 @@ export function SiteHeader() {
           >
             <MessageCircle className="h-4 w-4" aria-hidden="true" />
             Consultar por WhatsApp
-          </a>
+          </a> */}
 
           <button
             type="button"
-            aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
+            aria-label={open ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background text-foreground md:hidden"
@@ -73,11 +76,14 @@ export function SiteHeader() {
 
       <div
         className={cn(
-          'overflow-hidden border-t border-border/60 bg-background transition-[max-height] duration-300 md:hidden',
-          open ? 'max-h-96' : 'max-h-0',
+          "overflow-hidden border-t border-border/60 bg-background transition-[max-height] duration-300 md:hidden",
+          open ? "max-h-96" : "max-h-0",
         )}
       >
-        <nav className="flex flex-col gap-1 px-4 py-4" aria-label="Navegación móvil">
+        <nav
+          className="flex flex-col gap-1 px-4 py-4"
+          aria-label="Navegación móvil"
+        >
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -101,5 +107,5 @@ export function SiteHeader() {
         </nav>
       </div>
     </header>
-  )
+  );
 }

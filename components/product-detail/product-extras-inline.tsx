@@ -26,7 +26,9 @@ const inlineExtras = [
 export function ProductExtrasInline() {
   return (
     <div className="mt-6">
-      <p className="text-[11px] uppercase tracking-wider text-muted-foreground mb-3">También podés sumar:</p>
+      <p className="text-[11px] uppercase tracking-wider text-muted-foreground mb-3">
+        También podés sumar:
+      </p>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         {inlineExtras.map((extra) => (
           <div
@@ -42,7 +44,9 @@ export function ProductExtrasInline() {
               />
             </div>
             <div className="mt-2 px-1 text-center">
-              <p className="text-[13px] font-medium leading-tight">{extra.label}</p>
+              <p className="text-[13px] font-medium leading-tight">
+                {extra.label}
+              </p>
             </div>
           </div>
         ))}
