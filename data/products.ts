@@ -56,7 +56,7 @@ export const products: Product[] = [
     description:
       'Hermoso arreglo floral pensado para regalar en bienvenidas y celebraciones.',
     image: '/products/ramo-1.png',
-    badges: [],
+    badges: ['nuevo'],
     features: [
       'Flores seleccionadas de temporada',
       'Presentación lista para regalar',
@@ -72,7 +72,7 @@ export const products: Product[] = [
     description:
       'Arreglo de colores intensos, ideal para aniversarios y celebraciones importantes.',
     image: '/products/ramo-2.png',
-    badges: [],
+    badges: ['ideal-regalo'],
     features: ['Flores seleccionadas de temporada', 'Presentación lista para regalar'],
   },
   {
@@ -84,7 +84,7 @@ export const products: Product[] = [
     description:
       'Ramo elegante y cálido pensado para ocasiones románticas y agradecimientos.',
     image: '/products/ramo-3.png',
-    badges: [],
+    badges: ['mas-vendido'],
     features: ['Flores seleccionadas de temporada', 'Presentación lista para regalar'],
   },
   {
@@ -141,7 +141,7 @@ export const products: Product[] = [
     shortDescription: 'Expresión intensa de amor para sorpresas románticas',
     description: 'Ramo voluminoso y romántico, disponible en temporada.',
     image: '/products/ramo-8.png',
-    badges: [],
+    badges: ['ideal-regalo'],
     features: ['Flores seleccionadas de temporada', 'Presentación lista para regalar'],
   },
 
@@ -154,7 +154,7 @@ export const products: Product[] = [
     shortDescription: 'Para despedidas emotivas y muestras de amor eterno',
     description: 'Arreglo en forma de corazón, ideal para homenajes.',
     image: '/products/corazon-1.jpg',
-    badges: [],
+    badges: ['mas-vendido'],
     isCondolence: true,
     features: ['Flores seleccionadas de temporada', 'Presentación lista para regalar'],
   },
@@ -227,7 +227,7 @@ export const products: Product[] = [
     shortDescription: 'Adecuada para despedidas íntimas y recordatorios colectivos',
     description: 'Corona elaborada artesanalmente con respeto.',
     image: '/products/corona-3.jpg',
-    badges: [],
+    badges: ['mas-vendido'],
     isCondolence: true,
     features: ['Flores seleccionadas de temporada', 'Presentación lista para regalar'],
   },
@@ -287,7 +287,7 @@ export const products: Product[] = [
     shortDescription: 'Destinada a ceremonias especiales y homenajes distinguidos',
     description: 'Corona de tonos vivos para homenajes distinguidos.',
     image: '/products/corona-8.jpg',
-    badges: [],
+    badges: ['mas-vendido'],
     isCondolence: true,
     features: ['Flores seleccionadas de temporada', 'Presentación lista para regalar'],
   },
@@ -324,7 +324,7 @@ export const products: Product[] = [
     shortDescription: 'Perfecta para despedidas solemnes y ceremonias religiosas',
     description: 'Cruz elaborada artesanalmente con respeto.',
     image: '/products/cruz-3.png',
-    badges: [],
+    badges: ['mas-vendido'],
     isCondolence: true,
     features: ['Flores seleccionadas de temporada', 'Presentación lista para regalar'],
   },
