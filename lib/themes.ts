@@ -37,5 +37,5 @@ export const themes: ThemeOption[] = [
   },
 ]
 
-export const DEFAULT_THEME: ThemeId = 'rosa'
+export const DEFAULT_THEME: ThemeId = 'verde'
 export const THEME_STORAGE_KEY = 'floreria-la-rosa-theme'
