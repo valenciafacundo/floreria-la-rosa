@@ -1,7 +1,7 @@
 // Reemplazá este número por el real de la florería (formato internacional sin +).
-export const WHATSAPP_NUMBER = '5491100000000'
-export const PHONE_NUMBER = '+54 11 0000-0000'
-export const PHONE_HREF = 'tel:+5491100000000'
+export const WHATSAPP_NUMBER = '5493875312819'
+export const PHONE_NUMBER = '(387) 5312819'
+export const PHONE_HREF = 'tel:3874229189'
 
 export function buildWhatsAppUrl(message: string): string {
   const encoded = encodeURIComponent(message)

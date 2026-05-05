@@ -1,6 +1,4 @@
-import { HomeBannerHeader } from "@/components/header/home-banner-header";
-import { SiteFooter } from "@/components/header/site-footer";
-import { WhatsAppFloat } from "@/components/header/whatsapp-float";
+import { FloatingButtons } from "@/components/header/floating-buttons";
 import { SelectedProductsFloat } from "@/components/header/selected-products-float";
 import { FeaturedSection } from "@/components/product-grid/featured-section";
 import { SelectedProductsSection } from "@/components/product-grid/selected-products-section";
@@ -10,6 +8,7 @@ import { ContactSection } from "@/components/contact-section/contact-section";
 import { getProductsByOccasion } from "@/helpers/products";
 import { Hero } from "@/components/hero/hero";
 import { SiteHeader } from "@/components/header/site-header";
+import { SiteFooter } from "@/components/header/site-footer";
 
 export default function HomePage() {
   const loveProducts = getProductsByOccasion("amor", 4);
@@ -73,7 +72,7 @@ export default function HomePage() {
       </main>
       <SiteFooter />
       <SelectedProductsFloat />
-      <WhatsAppFloat />
+      <FloatingButtons />
     </>
   );
 }

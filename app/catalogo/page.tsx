@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { SiteHeader } from "@/components/header/site-header";
 import { SiteFooter } from "@/components/header/site-footer";
-import { WhatsAppFloat } from "@/components/header/whatsapp-float";
+
 import { SelectedProductsFloat } from "@/components/header/selected-products-float";
 import { CatalogBrowser } from "@/components/product-grid/catalog-browser";
 
@@ -40,7 +40,7 @@ export default function CatalogoPage() {
       </main>
       <SiteFooter />
       <SelectedProductsFloat />
-      <WhatsAppFloat />
+      {/* <WhatsAppFloat /> */}
     </>
   );
 }
