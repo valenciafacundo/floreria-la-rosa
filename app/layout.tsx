@@ -21,21 +21,8 @@ export const metadata: Metadata = {
   description: 'Florería La Rosa: arreglos artesanales para todas las ocasiones. Entregas coordinadas, flores de temporada y atención personalizada las 24 horas por WhatsApp.',
   generator: 'v0.app',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/icon.png',
+    apple: '/icon.png',
   },
 }
 
