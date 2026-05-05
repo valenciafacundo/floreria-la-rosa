@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { FloatingButtons } from '@/components/header/floating-buttons'
+import { SelectedProductsFloat } from '@/components/header/selected-products-float'
 import { SiteHeader } from '@/components/header/site-header'
 import { SiteFooter } from '@/components/header/site-footer'
 import { ProductDetail } from '@/components/product-detail/product-detail'
@@ -77,6 +78,7 @@ export default async function ProductPage({ params }: PageProps) {
         <ProductDetail product={product} />
       </main>
       <SiteFooter />
+      <SelectedProductsFloat />
       <FloatingButtons />
     </>
   )
