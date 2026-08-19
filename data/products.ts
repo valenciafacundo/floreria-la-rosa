@@ -144,6 +144,78 @@ export const products: Product[] = [
     badges: ['ideal-regalo'],
     features: ['Flores seleccionadas de temporada', 'Presentación lista para regalar'],
   },
+  {
+    slug: 'ramo-jardin-multicolor',
+    name: 'Ramo Jardín Multicolor',
+    primaryOccasion: 'cumpleanos',
+    occasions: ['cumpleanos', 'celebraciones', 'primavera', 'regalos'],
+    shortDescription: 'Claveles de colores y lilium para alegrar el día',
+    description:
+      'Alegre combinación de claveles multicolor con lilium blanco y gypsophila. Vibrante y festivo, ideal para cumpleaños y celebraciones.',
+    image: '/products/ramo-9.jpg',
+    badges: ['nuevo'],
+    features: ['Flores seleccionadas de temporada', 'Presentación lista para regalar'],
+  },
+  {
+    slug: 'ramo-elegancia-romantica',
+    name: 'Ramo Elegancia Romántica',
+    primaryOccasion: 'amor',
+    occasions: ['amor', 'aniversario', 'cumpleanos', 'regalos'],
+    shortDescription: 'Rosas rojas y durazno con lilium para enamorar',
+    description:
+      'Combinación de rosas rojas y durazno con lilium blanco y gypsophila. Un ramo elegante y romántico, ideal para aniversarios y declaraciones de amor.',
+    image: '/products/ramo-10.jpg',
+    badges: ['nuevo'],
+    features: ['Flores seleccionadas de temporada', 'Presentación lista para regalar'],
+  },
+  {
+    slug: 'ramo-pasion-escarlata',
+    name: 'Ramo Pasión Escarlata',
+    primaryOccasion: 'amor',
+    occasions: ['amor', 'aniversario', 'regalos'],
+    shortDescription: 'Rosas rojas intensas y lilium blanco',
+    description:
+      'Rosas rojas de tallo largo realzadas con lilium blanco y gypsophila. Una expresión clásica de pasión y romanticismo.',
+    image: '/products/ramo-11.jpg',
+    badges: ['nuevo'],
+    features: ['Flores seleccionadas de temporada', 'Presentación lista para regalar'],
+  },
+  {
+    slug: 'ramo-dulce-encuentro',
+    name: 'Ramo Dulce Encuentro',
+    primaryOccasion: 'amor',
+    occasions: ['amor', 'cumpleanos', 'aniversario', 'regalos'],
+    shortDescription: 'Rosas rojas y salmón con lilium y moño fucsia',
+    description:
+      'Delicada mezcla de rosas rojas y salmón con lilium blanco, terminada con un moño fucsia. Ideal para sorprender con cariño.',
+    image: '/products/ramo-12.jpg',
+    badges: ['nuevo', 'ideal-regalo'],
+    features: ['Flores seleccionadas de temporada', 'Presentación lista para regalar'],
+  },
+  {
+    slug: 'ramo-novia-elegante',
+    name: 'Ramo Novia Elegante',
+    primaryOccasion: 'celebraciones',
+    occasions: ['celebraciones', 'aniversario', 'amor', 'regalos'],
+    shortDescription: 'Rosas blancas en ramo redondo, puro y elegante',
+    description:
+      'Ramo redondo de rosas blancas con follaje fino y detalles suaves. Sobrio y elegante, perfecto para bodas, aniversarios y ocasiones especiales.',
+    image: '/products/ramo-13.jpg',
+    badges: ['nuevo'],
+    features: ['Flores seleccionadas de temporada', 'Presentación lista para regalar'],
+  },
+  {
+    slug: 'ramo-fiesta-de-gerberas',
+    name: 'Ramo Fiesta de Gerberas',
+    primaryOccasion: 'cumpleanos',
+    occasions: ['cumpleanos', 'celebraciones', 'primavera', 'regalos'],
+    shortDescription: 'Gerberas, rosas y margaritas para celebrar con color',
+    description:
+      'Explosión de color con gerberas rojas y naranjas, rosas y margaritas blancas. Alegre y vibrante, ideal para cumpleaños y celebraciones.',
+    image: '/products/ramo-14.jpg',
+    badges: ['nuevo', 'mas-vendido'],
+    features: ['Flores seleccionadas de temporada', 'Presentación lista para regalar'],
+  },
 
     // Coronas y corazones (condolencias)
   {
