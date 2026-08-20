@@ -9,6 +9,8 @@ import { TrackSelectedProduct } from '@/components/product-detail/track-selected
 import { products } from '@/data/products'
 import { getProductBySlug } from '@/helpers/products'
 import { productUrl, SITE_URL } from '@/helpers/whatsapp'
+import { JsonLd } from '@/components/seo/json-ld'
+import { productSchema } from '@/helpers/structured-data'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -72,6 +74,7 @@ export default async function ProductPage({ params }: PageProps) {
 
   return (
     <>
+      <JsonLd data={productSchema(product)} />
       <SiteHeader />
       <main>
         <TrackSelectedProduct product={product} />

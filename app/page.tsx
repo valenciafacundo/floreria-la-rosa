@@ -9,6 +9,8 @@ import { getProductsBySection } from "@/helpers/products";
 import { Hero } from "@/components/hero/hero";
 import { SiteHeader } from "@/components/header/site-header";
 import { SiteFooter } from "@/components/header/site-footer";
+import { JsonLd } from "@/components/seo/json-ld";
+import { floristSchema } from "@/helpers/structured-data";
 
 export default function HomePage() {
   const loveProducts = getProductsBySection("amor", 4);
@@ -19,6 +21,7 @@ export default function HomePage() {
 
   return (
     <>
+      <JsonLd data={floristSchema()} />
       <SiteHeader />
       <main>
         <Hero />
