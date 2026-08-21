@@ -6,6 +6,7 @@ import { getRelatedProducts } from "@/helpers/products";
 import { ProductGrid } from "@/components/product-grid/product-grid";
 import { ProductImageZoom } from "@/components/product-detail/product-image-zoom";
 import { ProductExtrasInline } from "@/components/product-detail/product-extras-inline";
+import { TrackedWhatsAppLink } from "@/components/analytics/tracked-whatsapp-link";
 
 interface ProductDetailProps {
   product: Product;
@@ -106,15 +107,19 @@ export function ProductDetail({ product }: ProductDetailProps) {
             </div>
 
             <div className="mt-4 flex flex-col gap-3">
-              <a
+              <TrackedWhatsAppLink
                 href={whatsappForProduct(product.name, product.slug)}
-                target="_blank"
-                rel="noopener noreferrer"
+                event={{
+                  origen: "detalle",
+                  producto: product.name,
+                  slug: product.slug,
+                  ocasion: product.primaryOccasion,
+                }}
                 className="inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:scale-[1.01] hover:bg-primary/90 md:text-lg"
               >
                 <MessageCircle className="h-4 w-4" aria-hidden="true" />
                 Consultar disponibilidad
-              </a>
+              </TrackedWhatsAppLink>
               <p className="text-center text-xs text-muted-foreground">
                 Te respondemos por WhatsApp con precio actualizado y opciones.
               </p>

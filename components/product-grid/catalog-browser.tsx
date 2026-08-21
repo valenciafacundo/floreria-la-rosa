@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import { occasions, type ProductOccasion } from "@/data/products";
 import { filterProducts } from "@/helpers/products";
+import { trackOccasionFilter } from "@/helpers/analytics";
 import { ProductGrid } from "@/components/product-grid/product-grid";
 import { cn } from "@/lib/utils";
 
@@ -48,7 +49,10 @@ export function CatalogBrowser() {
                 type="button"
                 role="tab"
                 aria-selected={active}
-                onClick={() => setOccasion(item.value)}
+                onClick={() => {
+                  setOccasion(item.value);
+                  trackOccasionFilter(item.value);
+                }}
                 className={cn(
                   "flex-none rounded-full border px-4 py-2 text-xs font-medium transition-all sm:text-sm",
                   active

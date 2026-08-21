@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, Plus_Jakarta_Sans } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
+import { PostHogAnalytics } from '@/components/analytics/posthog-analytics'
 import { ThemeScript } from '@/components/theme-switcher/theme-script'
 import './globals.css'
 
@@ -44,7 +44,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        <PostHogAnalytics />
       </body>
     </html>
   )

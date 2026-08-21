@@ -7,6 +7,7 @@ import { type Product, badgeLabels } from "@/data/products";
 import { addSelectedProduct } from "@/helpers/favorites";
 import { getOccasionLabel, getPrimaryOccasion } from "@/helpers/products";
 import { whatsappForProduct } from "@/helpers/whatsapp";
+import { trackWhatsAppClick } from "@/helpers/analytics";
 
 interface ProductCardProps {
   product: Product;
@@ -66,6 +67,14 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
             href={whatsappForProduct(product.name, product.slug)}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() =>
+              trackWhatsAppClick({
+                origen: "catalogo_card",
+                producto: product.name,
+                slug: product.slug,
+                ocasion: product.primaryOccasion,
+              })
+            }
             className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-primary px-3 py-2 text-[11px] font-medium text-primary-foreground transition-all hover:bg-primary/90 sm:px-4 sm:py-2.5 sm:text-xs"
           >
             <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
