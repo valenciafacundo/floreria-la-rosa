@@ -3,19 +3,18 @@
 import { useEffect, Suspense } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
 import posthog from 'posthog-js'
+import { POSTHOG_KEY, POSTHOG_HOST, ANALYTICS_ENABLED } from '@/helpers/posthog-config'
 
 let initialized = false
 
 /**
- * Inicializa PostHog (si hay clave) y registra los pageviews en cada navegación.
- * Sin NEXT_PUBLIC_POSTHOG_KEY no hace nada, así el sitio funciona igual.
+ * Inicializa PostHog (solo en producción) y registra los pageviews en cada navegación.
  */
 export function PostHogAnalytics() {
   useEffect(() => {
-    const key = process.env.NEXT_PUBLIC_POSTHOG_KEY
-    if (!key || initialized) return
-    posthog.init(key, {
-      api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com',
+    if (!ANALYTICS_ENABLED || initialized) return
+    posthog.init(POSTHOG_KEY, {
+      api_host: POSTHOG_HOST,
       capture_pageview: false,
       capture_pageleave: true,
       person_profiles: 'identified_only',
@@ -35,7 +34,7 @@ function PageviewTracker() {
   const searchParams = useSearchParams()
 
   useEffect(() => {
-    if (!process.env.NEXT_PUBLIC_POSTHOG_KEY || !pathname) return
+    if (!ANALYTICS_ENABLED || !pathname) return
     let url = window.location.origin + pathname
     const qs = searchParams?.toString()
     if (qs) url += `?${qs}`

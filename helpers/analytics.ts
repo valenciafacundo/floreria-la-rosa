@@ -1,11 +1,12 @@
 import posthog from 'posthog-js'
+import { ANALYTICS_ENABLED } from '@/helpers/posthog-config'
 
 /**
- * Capa de analítica sobre PostHog. Todos los eventos son no-op si no hay
- * NEXT_PUBLIC_POSTHOG_KEY configurada, así el sitio funciona igual sin la clave.
+ * Capa de analítica sobre PostHog. Los eventos son no-op fuera de producción,
+ * así el desarrollo local no ensucia los datos.
  */
 function enabled(): boolean {
-  return typeof window !== 'undefined' && Boolean(process.env.NEXT_PUBLIC_POSTHOG_KEY)
+  return typeof window !== 'undefined' && ANALYTICS_ENABLED
 }
 
 /** Visita a la página de detalle de un producto. */
