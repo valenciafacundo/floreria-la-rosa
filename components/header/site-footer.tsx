@@ -6,6 +6,7 @@ import {
   PHONE_NUMBER,
 } from "@/helpers/whatsapp";
 import { TrackedWhatsAppLink } from "@/components/analytics/tracked-whatsapp-link";
+import { TrackedPhoneLink } from "@/components/analytics/tracked-phone-link";
 
 export function SiteFooter() {
   return (
@@ -73,9 +74,13 @@ export function SiteFooter() {
                 className="mt-0.5 h-4 w-4 text-primary"
                 aria-hidden="true"
               />
-              <a href={PHONE_HREF} className="hover:text-primary">
+              <TrackedPhoneLink
+                href={PHONE_HREF}
+                event={{ origen: "footer" }}
+                className="hover:text-primary"
+              >
                 {PHONE_NUMBER}
-              </a>
+              </TrackedPhoneLink>
             </li>
             <li className="flex items-start gap-2">
               <Clock
