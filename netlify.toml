@@ -1,0 +1,29 @@
+# Proxy inverso para la analítica.
+#
+# Los bloqueadores de publicidad (uBlock, AdGuard, Brave) tienen us.i.posthog.com
+# en sus listas y cortan el envío sin ningún aviso: PostHog estima que así se
+# pierde entre el 10% y el 25% de los eventos. Enrutando por el propio dominio,
+# para el bloqueador es tráfico del sitio y no lo toca.
+#
+# La ruta es deliberadamente neutra. /ingest es la convención de PostHog y por eso
+# mismo es la que más chances tiene de terminar en una lista de patrones.
+#
+# status = 200 hace que Netlify reenvíe la petición (proxy) en vez de responder
+# con una redirección, que es lo que rompería el envío desde el navegador.
+#
+# Estas reglas están acopladas a POSTHOG_HOST en helpers/posthog-config.ts:
+# si cambia la ruta acá, cambia allá.
+
+# Los assets que posthog-js descarga en runtime (grabador de sesión, encuestas)
+# viven en otro host que el de ingesta.
+[[redirects]]
+  from = "/eventos/static/*"
+  to = "https://us-assets.i.posthog.com/static/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/eventos/*"
+  to = "https://us.i.posthog.com/:splat"
+  status = 200
+  force = true

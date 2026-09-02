@@ -8,8 +8,17 @@ export const POSTHOG_KEY =
   process.env.NEXT_PUBLIC_POSTHOG_KEY ||
   'phc_vicDbSGhWgbuj4sguTM5YaPm66dgGRB4XskKHLK7inn8'
 
-export const POSTHOG_HOST =
-  process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com'
+// Los eventos salen por el propio dominio en vez de us.i.posthog.com: los
+// bloqueadores tienen ese dominio en sus listas y cortan el envío sin aviso.
+//
+// La ruta está acoplada a las reglas de netlify.toml; si cambia una, cambia la
+// otra. Por eso no se puede pisar por variable de entorno: un valor apuntando al
+// dominio real desactivaría el proxy en silencio, que es justo lo que no queremos.
+export const POSTHOG_HOST = '/eventos'
+
+// PostHog vive acá. El proxy solo transporta los eventos; la interfaz (toolbar,
+// enlaces a las grabaciones) necesita la dirección real.
+export const POSTHOG_UI_HOST = 'https://us.posthog.com'
 
 // Solo medimos en producción, para no ensuciar los datos con desarrollo local.
 export const ANALYTICS_ENABLED = process.env.NODE_ENV === 'production'
