@@ -9,6 +9,7 @@ import {
   HandHelping,
 } from "lucide-react";
 import { generalWhatsAppUrl } from "@/helpers/whatsapp";
+import { TrackedWhatsAppLink } from "@/components/analytics/tracked-whatsapp-link";
 
 const benefits = [
   {
@@ -50,15 +51,14 @@ export function Hero() {
           </p>
 
           <div className="flex flex-col gap-3 sm:flex-row">
-            <a
+            <TrackedWhatsAppLink
               href={generalWhatsAppUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              event={{ origen: "hero" }}
               className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:scale-[1.02] hover:bg-primary/90"
             >
               <MessageCircle className="h-4 w-4" aria-hidden="true" />
               Consultar por WhatsApp
-            </a>
+            </TrackedWhatsAppLink>
             <Link
               href="/catalogo"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card px-7 py-3.5 text-sm font-medium text-foreground transition-colors hover:border-primary/40 hover:text-primary"

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Flower2, Menu, X, MessageCircle } from "lucide-react";
 import { generalWhatsAppUrl } from "@/helpers/whatsapp";
+import { trackWhatsAppClick } from "@/helpers/analytics";
 import { cn } from "@/lib/utils";
 import { ThemeSwitcher } from "@/components/theme-switcher/theme-switcher";
 
@@ -98,7 +99,10 @@ export function SiteHeader() {
             href={generalWhatsAppUrl}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => setOpen(false)}
+            onClick={() => {
+              setOpen(false);
+              trackWhatsAppClick({ origen: "header_movil" });
+            }}
             className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground"
           >
             <MessageCircle className="h-4 w-4" aria-hidden="true" />

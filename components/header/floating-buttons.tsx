@@ -3,6 +3,7 @@
 import { MessageCircle, Phone, ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
 import { generalWhatsAppUrl, PHONE_HREF } from "@/helpers/whatsapp";
+import { trackWhatsAppClick } from "@/helpers/analytics";
 import { cn } from "@/lib/utils";
 
 export function FloatingButtons() {
@@ -47,6 +48,7 @@ export function FloatingButtons() {
         href={generalWhatsAppUrl}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackWhatsAppClick({ origen: "boton_flotante" })}
         className="group flex h-14 w-14 items-center justify-center overflow-hidden rounded-full bg-[#25D366] text-white shadow-lg transition-all duration-300 hover:w-64 hover:justify-start hover:px-6 hover:-translate-y-1"
       >
         <div className="flex h-14 w-14 flex-none items-center justify-center">

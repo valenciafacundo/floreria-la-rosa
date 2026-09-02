@@ -19,11 +19,24 @@ export function trackProductView(props: {
 }
 
 /**
+ * Desde dónde se abrió WhatsApp. Los dos primeros llevan producto asociado;
+ * el resto son consultas generales y sirven para saber qué CTA funciona.
+ */
+export type OrigenWhatsApp =
+  | 'catalogo_card'
+  | 'detalle'
+  | 'boton_flotante'
+  | 'hero'
+  | 'header_movil'
+  | 'footer'
+  | 'contacto'
+
+/**
  * Clic en un botón de WhatsApp. Es el evento clave: proxy de "producto deseado"
  * porque la venta se cierra fuera del sitio.
  */
 export function trackWhatsAppClick(props: {
-  origen: 'catalogo_card' | 'detalle' | 'general'
+  origen: OrigenWhatsApp
   producto?: string
   slug?: string
   ocasion?: string
