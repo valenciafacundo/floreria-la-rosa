@@ -3,7 +3,12 @@
 import { useEffect, Suspense } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
 import posthog from 'posthog-js'
-import { POSTHOG_KEY, POSTHOG_HOST, ANALYTICS_ENABLED } from '@/helpers/posthog-config'
+import {
+  POSTHOG_KEY,
+  POSTHOG_HOST,
+  POSTHOG_UI_HOST,
+  ANALYTICS_ENABLED,
+} from '@/helpers/posthog-config'
 
 let initialized = false
 
@@ -15,6 +20,7 @@ export function PostHogAnalytics() {
     if (!ANALYTICS_ENABLED || initialized) return
     posthog.init(POSTHOG_KEY, {
       api_host: POSTHOG_HOST,
+      ui_host: POSTHOG_UI_HOST,
       capture_pageview: false,
       capture_pageleave: true,
       person_profiles: 'identified_only',
